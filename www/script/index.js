@@ -52,15 +52,14 @@
 //app.initialize();
 
 
-
+var lattitudeJsIndex,longitudeJsIndex,gpsStatus = false ;
 $(document).ready(function() {
-    //$('.carousel').carousel('pause');
     $('.carousel').each(function(){
         $(this).carousel({
             interval: false
         });
     });
-    getPosition();
+    //getPosition();
     //window.plugins.toast.showShortTop('Hello there!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
     //window.plugins.toast.showLongBottom('Hello there!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
     //window.plugins.toast.show('Hello there!', 'long', 'center', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
@@ -76,20 +75,24 @@ $('#back').click(function(){
 //////////////////////////////////////////////////////////////////////////////////
 function getPosition() {
     var options = {
-        enableHighAccuracy: true
+        enableHighAccuracy: true,
         //maximumAge: 3600000
     }
 
     var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
     function onSuccess(position) {
-        $('#lat_label').html("Lat : " +position.coords.latitude);
-        $('#lng_label').html("Lng : " +position.coords.longitude);
+
+        lattitudeJsIndex = position.coords.latitude ;
+        longitudeJsIndex = position.coords.longitude ;
+        //$('#lat_label').html("Lat : " +position.coords.latitude);
+        //$('#lng_label').html("Lng : " +position.coords.longitude);
+        gpsStatus = true;
     };
 
     function onError(error) {
         //console.log('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
-        window.plugins.toast.showLongBottom('การค้นหาตำแหน่งล้มเหลว', function(a){console.log('toast success: ' + a)}
+        window.plugins.toast.showLongBottom('การค้นหาตำแหน่งล้มเหลวกรุณาอัปโหลดใหม่อีกครั้ง', function(a){console.log('toast success: ' + a)}
             , function(b){alert('toast error: ' + b)});
     }
 }
