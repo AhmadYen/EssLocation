@@ -29,4 +29,5 @@
     <feature name="Toast">
         <param name="android-package" value="nl.xservices.plugins.Toast" />
     </feature>
+    <preference name="orientation" value="portrait" />
 </widget>

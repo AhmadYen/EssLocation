@@ -52,48 +52,91 @@
 //app.initialize();
 
 
-
+var lattitudeJsIndex,longitudeJsIndex,gpsStatus = false ;
 $(document).ready(function() {
-    //$('.carousel').carousel('pause');
     $('.carousel').each(function(){
         $(this).carousel({
             interval: false
         });
     });
-    getPosition();
+    //getPosition();
     //window.plugins.toast.showShortTop('Hello there!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
     //window.plugins.toast.showLongBottom('Hello there!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
     //window.plugins.toast.show('Hello there!', 'long', 'center', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 });
 
-$('#device').click(function(){
+$('#start').click(function(){
     location.href="rootPage.html" ;
 });
 
+$('#back').click(function(){
+    location.href="index.html" ;
+});
 //////////////////////////////////////////////////////////////////////////////////
 function getPosition() {
     var options = {
-        enableHighAccuracy: true
+        enableHighAccuracy: true,
         //maximumAge: 3600000
     }
 
     var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
     function onSuccess(position) {
-        $('#lat_label').html("Lat : " +position.coords.latitude);
-        $('#lng_label').html("Lng : " +position.coords.latitude);
+
+        lattitudeJsIndex = position.coords.latitude ;
+        longitudeJsIndex = position.coords.longitude ;
+        //$('#lat_label').html("Lat : " +position.coords.latitude);
+        //$('#lng_label').html("Lng : " +position.coords.longitude);
+        gpsStatus = true;
     };
 
     function onError(error) {
         //console.log('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
-        window.plugins.toast.showLongBottom('การค้นหาตำแหน่งล้มเหลว', function(a){console.log('toast success: ' + a)}
+        window.plugins.toast.showLongBottom('การค้นหาตำแหน่งล้มเหลวกรุณาอัปโหลดใหม่อีกครั้ง', function(a){console.log('toast success: ' + a)}
             , function(b){alert('toast error: ' + b)});
     }
 }
 
 function CheckNum() {
-
     if (event.keyCode < 48 || event.keyCode > 57) {
         event.returnValue = false;
     }
 }
+
+$('#close_modal').click(function(){
+    $("#help").removeClass('ui-btn-active');
+});
+
+//var num_swipe = 0;
+$(document).on("pagecreate","#touch_page",function(){
+    $("#myCarousel").on("swiperight",function(){
+        //if(num_swipe > 0){
+            $("#myCarousel").carousel("prev");
+        //    num_swipe--;
+        //}
+
+    });
+});
+
+$(document).on("pagecreate","#touch_page",function(){
+    $("#myCarousel").on("swipeleft",function(){
+        //if(num_swipe < 4){
+            $("#myCarousel").carousel("next");
+        //    num_swipe++;
+        //}
+
+    });
+});
+
+/*
+ * Fix for footer when the keyboard is displayed
+ */
+$(document).on('focus',"#hn", function()
+{
+    $.mobile.activePage.find("div[data-role='footer']").hide();
+});
+
+$(document).on('blur',"#hn", function()
+{
+    $.mobile.activePage.find("div[data-role='footer']").show();
+});

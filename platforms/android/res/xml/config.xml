@@ -46,4 +46,5 @@
     <allow-intent href="geo:*" />
     <allow-navigation href="http://localhost*" />
     <param name="android-package" value="org.apache.cordova.core.NetworkManager" />
+    <preference name="orientation" value="portrait" />
 </widget>
