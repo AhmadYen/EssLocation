@@ -1,33 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
-    <!--<meta name="format-detection" content="telephone=no">-->
-    <!--<meta name="msapplication-tap-highlight" content="no">-->
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <!--<meta  name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">-->
     <title>GPS APP TEST</title>
     <link rel="stylesheet"  href="css/rootPage.css">
     <link rel="stylesheet"  href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet"  href="css/jquery.mobile-1.4.5.min.css">
     <script  src="js/jquery-1.11.3.min.js"></script>
     <script  src="js/jquery.mobile-1.4.5.min.js"></script>
     <script  src="js/bootstrap.min.js"></script>
+    <script  src="js/bootbox.min.js"></script>
     <script src="cordova.js"></script>
-
     <style>
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
             width: 70%;
             margin: auto;
         }
-        .ui-page {
-            background:#c4e3f3;
-        }
-
         #footer {
             position: fixed;
-            z-index: 100;
+            /*z-index: 100;*/
             bottom: 0;
             left: 0;
             width: 100%;
@@ -37,124 +29,134 @@
             /*position: fixed;*/
             /*z-index: 100;*/
             /*bottom: 0;*/
-            /*left: 0;*/
-            /*right:1%;*/
+            left: 0;
+            right:1%;
             width: 100%;
         }
         .left-carousel-test{
-            position: absolute;
+            /*position: absolute;*/
             top: 40%;
-            /*bottom: 30px;*/
-            left: 2%;
-            width: 1cm;
-            font-size: 250%;
-            /*color: #00cc00;*/
-            /*text-align: center;*/
+            /*left: 0%;*/
+            /*right: 90%;*/
+            width: 10%;
+            font-size: 200%;
             text-shadow: -2px 5px 10px rgba(0,0,0,.7);
             background-color: rgba(0,0,0,0);
-            /*filter: alpha(opacity=50);*/
-            /*opacity: .5;*/
         }
         .right-carousel-test {
-            position: absolute;
+            /*position: absolute;*/
             top: 40%;
-            /*bottom: 0;*/
-            right: 2%;
-            width: 1cm;
-            font-size: 250%;
-            /*color: #fff;*/
-            /*text-align: center;*/
+            /*left: 90%;*/
+            /*right: 0%;*/
+            width: 10%;
+            font-size: 200%;
             text-shadow: 2px 5px 10px rgba(0,0,0,.7);
             background-color: rgba(0,0,0,0);
-            /*filter: alpha(opacity=50);*/
-            /*opacity: .6;*/
+            /*z-index: 10000;*/
         }
-        .popover{
-            z-index: 1000;
+        .from-page{
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: auto;
         }
     </style>
-
 </head>
+<body id="rootPage">
+<div class="wrapper" data-role="page" id="touch_page">
+    <div data-role="main" class="ui-content from-page pull-right" id="test_swipe" >
+        <center >
+            <div id="myCarousel" class="carousel slide demo-page" data-ride="carousel" style="width: 100%; height: 50% !important; z-index: 5;">
 
-<body>
-<div data-role="page" data-theme="a">
-<div role="main" class="ui-content">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-        </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img id="imageNum0" src="image/camera_icon_1.png">
+                    </div>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active"  width="460" height="345">
-                <img id="imageNum0" src="image/camera_icon_1.png" >
+                    <div class="item">
+                        <img id="imageNum1" src="image/camera_icon_1.png">
+                    </div>
+
+                    <div class="item">
+                        <img id="imageNum2" src="image/camera_icon_1.png">
+                    </div>
+
+                    <div class="item">
+                        <img id="imageNum3" src="image/camera_icon_1.png">
+                    </div>
+
+                    <div class="item">
+                        <img id="imageNum4" src="image/camera_icon_1.png">
+                    </div>
+                </div>
+
+                <!--&lt;!&ndash; Left and right controls &ndash;&gt;-->
+                <!--<a class="left-carousel-test pull-left" href="#myCarousel" role="button" data-slide="prev">-->
+                    <!--<span class="glyphicon glyphicon-triangle-left"  aria-hidden="true" style="color: #dfeffc"></span>-->
+                    <!--&lt;!&ndash;<span class="sr-only">Previous</span>&ndash;&gt;-->
+                <!--</a>-->
+                <!--<a class=" right-carousel-test pull-right" href="#myCarousel" role="button" data-slide="next">-->
+                    <!--<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="color: #dfeffc;"></span>-->
+                    <!--&lt;!&ndash;<span class="sr-only">Next</span>&ndash;&gt;-->
+                <!--</a>-->
+                <!-- Indicators -->
+                <ol class="carousel-indicators" >
+                <li data-target="#myCarousel" class="active"></li>
+                <li data-target="#myCarousel" ></li>
+                <li data-target="#myCarousel" ></li>
+                <li data-target="#myCarousel" ></li>
+                <li data-target="#myCarousel" ></li>
+                </ol>
             </div>
-
-            <div class="item" width="460" height="345">
-                <img id="imageNum1" src="image/camera_icon_1.png"  >
+        </center>
+        <br><br>
+            <!--<div style="bottom: 30px;">-->
+                <!--<label id="lat_label"  style="font-family: 'TH Sarabun New'; color: #00cc00; font-size: 100%;"></label>-->
+                <!--<label id="lng_label"  style="font-family: 'TH Sarabun New'; color: #00cc00; font-size: 100%;"></label>-->
+            <!--</div>-->
+        <div style="width: 100%; height: 50%; z-index: 4; position: relative;">
+            <div data-role="controlgroup" >
+                <input id="hn" type="tel" data-clear-btn="true" onkeypress="CheckNum();"  maxlength="7"
+                       data-rel="popup" placeholder="กรอกรหัสผู้ป่วย" data-wrapper-class="controlgroup-textinput ui-btn" style="text-align: center; font-size: 100%; color: #0c0c0c">
+                <button id = "query"  class="ui-btn ui-icon-search ui-btn-icon-notext " style="padding-bottom: 5%;"></button>
             </div>
-
-            <div class="item"  width="460" height="345">
-                <img id="imageNum2" src="image/camera_icon_1.png" >
-            </div>
-
-            <div class="item" width="460" height="345">
-                <img id="imageNum3" src="image/camera_icon_1.png"  >
-            </div>
-
-            <div class="item" width="460" height="345">
-                <img id="imageNum4" src="image/camera_icon_1.png"  >
+            <div ><input class="form-control"  id="fname" type="text" name="textFULLNAME" readonly="readonly" style="text-align: center;font-family: 'TH SarabunPSK'; font-size: 100%; font-weight: bold"  placeholder="ผู้ป่วย..." ></div>
+            <div style="height: 70%">
+                <button id="upload"  data-shadow="true" style="background-color: #253e5a;color: #fff9df;  font-weight: bold;"><span style="font-size: 25px; font-family: 'TH SarabunPSK';">อัปโหลดพิกัดผู้ป่วย</span></button>
             </div>
         </div>
 
-        <!-- Left and right controls -->
-        <a class=" left-carousel-test" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-triangle-left"  aria-hidden="true" style="color: #dfeffc"></span>
-            <!--<span class="sr-only">Previous</span>-->
-        </a>
-        <a class=" right-carousel-test" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="color: #dfeffc"></span>
-            <!--<span class="sr-only">Next</span>-->
-        </a>
     </div>
-
-        <div>
-            <label id="lat_label"  style="font-family: 'TH Sarabun New'; color: #00cc00"></label>
-            <label id="lng_label"  style="font-family: 'TH Sarabun New'; color: #00cc00"></label>
+    <!--<br><br><br>-->
+    <!--<--Footer Main-->
+    <div id="footer" data-role="footer" data-theme="a" style="z-index: 5; position:fixed">
+        <div class="nav-glyphish-example" style="width: 100%;height: 30%;  bottom: 0;  " >
+            <div data-role="navbar" class="nav-glyphish-example" >
+                <ul>
+                    <li><a id="back" data-icon="home">หน้าแรก</a></li>
+                    <li><a id="help" data-toggle="modal" data-target="#myModal"  data-icon="user">ความช่วยเหลือ</a></li>
+                </ul>
+            </div>
         </div>
-<br><br><br>
-    <div  data-role="controlgroup">
-            <input id="hn" type="text" data-clear-btn="true" onkeypress="CheckNum();"  maxlength="7"
-            data-rel="popup" placeholder="กรอกรหัสผู้ป่วย" data-wrapper-class="controlgroup-textinput ui-btn" style="text-align: center;">
-            <button id = "query"  class="ui-btn ui-icon-search ui-btn-icon-notext " style="padding-bottom: 7%;"></button>
     </div>
-        <div ><input class="form-control"  id="fname" type="text" name="textFULLNAME" readonly="readonly" style="padding-bottom: auto;text-align: center;font-family: 'TH SarabunPSK'; font-size: 25px; font-weight: bold"  placeholder="ผู้ป่วย..." ></div>
-        <div style="height: 50%">
-            <button id="upload" data-theme="e" data-shadow="true" style="background-color: #253e5a;color: #fff9df;  font-weight: bold;"><span style="font-size: 25px; font-family: 'TH SarabunPSK';">อัปโหลดพิกัดผู้ป่วย</span></button>
-        </div>
-</div>
-
-    <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
-        <a href="#" data-rel="back"  class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-        <h5 style="font-family: 'TH SarabunPSK'; font-size: 20px; font-weight: bold;">ไม่พบรหัสผู้ป่วยกรุณาตรวจสอบใหม่อีกครั้ง</h5>
-    </div>
-
-    <br><br><br>
-
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 
     <!-- Modal -->
     <div class="modal"  id="myModal" role="dialog" data-backdrop="static">
         <div class="modal-dialog modal-lg" style="bottom: -50px">
             <!-- Modal content-->
             <div class="modal-content">
-                <div data-role="header" data-theme="b" style="border-top-right-radius: 5px; border-top-left-radius: 5px">
-                <h1 style="font-family: 'TH SarabunPSK'; font-weight: bold; font-size: 17px">ความช่วยเหลือ</h1>
-                <a data-dismiss="modal" class="ui-btn ui-shadow ui-icon-delete ui-corner-all ui-btn-icon-notext "></a>
+                <div data-role="header" data-theme="a" style="border-top-right-radius: 5px; border-top-left-radius: 5px">
+                    <h1 style="font-family: 'TH SarabunPSK'; font-weight: bold; font-size: 17px">ความช่วยเหลือ</h1>
+                    <a data-dismiss="modal" id="close_modal" class="ui-btn ui-shadow ui-icon-delete ui-corner-all ui-btn-icon-notext "></a>
                 </div>
                 <div class="modal-body">
                     <div role="main" class="ui-mobile">
@@ -176,30 +178,29 @@
                         </div>
                     </div>
                 </div>
-                <div id="footer-dialog" data-role="footer" data-theme="b" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
-                        <div  class="controlgroup" data-type="horizontal" >
-                            <center>
-                                <a href="#slideDialog" role="button" data-slide="prev"  style="font-family: 'TH SarabunPSK';" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-left  ">ก่อนหน้า</a>
-                                <a href="#slideDialog" role="button" data-slide="next"  style="font-family: 'TH SarabunPSK'; " class="ui-btn ui-corner-all ui-icon-carat-r ui-btn-icon-right ">ถัดไป</a>
-                            </center>
-                        </div>
+                <div id="footer-dialog" data-role="footer" data-theme="a" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+                    <div  class="controlgroup" data-type="horizontal" >
+                        <center>
+                            <a href="#slideDialog" role="button" data-slide="prev"  style="font-family: 'TH SarabunPSK';" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-left  ">ก่อนหน้า</a>
+                            <a href="#slideDialog" role="button" data-slide="next"  style="font-family: 'TH SarabunPSK'; " class="ui-btn ui-corner-all ui-icon-carat-r ui-btn-icon-right ">ถัดไป</a>
+                        </center>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
-        <div id="footer" data-role="footer" data-theme="b">
-            <div class="nav-glyphish-example" style="width: auto;height: auto;" >
-                <div data-role="navbar" class="nav-glyphish-example" >
-                    <ul>
-                        <li><a href="index.html" id="rootPage" data-transition="slide" data-direction="reverse" data-icon="home">หน้าแรก</a></li>
-                        <li><a data-toggle="modal" data-target="#myModal"  data-icon="user">ความช่วยเหลือ</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
+    <div data-role="popup" id="popupDialog" class="ui-content" style="max-width:280px">
+       <center>
+        <label id="img_delete" style="font-family: 'TH SarabunPSK'; font-size: 20px; font-weight: bold;"></label>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b " data-rel="back">ยกเลิก</a>
+        <a id="confirm_delete" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b " data-rel="back" data-transition="flow">ตกลง</a>
+       </center>
+    </div>
 
 </div>
+
     <script type="text/javascript" src="js/Toast.js"></script>
     <script type="text/javascript" src="script/index.js"></script>
     <script type="text/javascript" src="script/query.js"></script>
