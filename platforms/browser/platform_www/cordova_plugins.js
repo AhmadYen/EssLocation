@@ -343,7 +343,8 @@ module.exports.metadata =
     "cordova-plugin-geolocation": "2.2.0",
     "cordova-plugin-network-information": "1.2.1",
     "cordova-plugin-file-transfer": "1.5.1",
-    "cordova-plugin-x-toast": "2.5.2"
+    "cordova-plugin-x-toast": "2.5.2",
+    "cordova-plugin-crosswalk-webview": "1.8.0"
 }
 // BOTTOM OF METADATA
 });

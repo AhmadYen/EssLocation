@@ -1,8 +1,10 @@
 {
     "cordova-plugin-whitelist": {
         "source": {
-            "type": "registry",
-            "id": "cordova-plugin-whitelist@1"
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugin-whitelist.git",
+            "subdir": ".",
+            "ref": "r1.0.0"
         },
         "is_top_level": true,
         "variables": {}
@@ -67,6 +69,14 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-x-toast"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-crosswalk-webview": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-crosswalk-webview"
         },
         "is_top_level": true,
         "variables": {}

@@ -83,6 +83,7 @@ function cameraTakePicture(element) {
 $('#upload').click(function(){
     //console.log(imgTake);
     getPosition();
+    delete_img();
     if(imgTake > 0 && $('#fname').val()!= '' && gpsStatus == true){
         check_hn();
         if(check_result == ""){
@@ -143,13 +144,15 @@ function upload(imageUrl,loop) {
                     numSuccess = 0;
                     window.plugins.toast.showLongBottom('อัปโหลดสำเร็จ', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
                     imageUrl=[null,null,null,null,null];
-                    $('[id=imageNum]').attr('src','image/camera_icon_1.png');
+                    $('[id^=imageNum]').attr('src','image/camera_icon_1.png');
+                    $('#hn').val('');
+                    $('#fname').val('');
                 }
                 else {
-                    numName = 0;
-                    loop = 0;
-                    imgTake = 0;
-                    numSuccess = 0;
+                    //numName = 0;
+                    //loop = 0;
+                    //imgTake = 0;
+                    //numSuccess = 0;
                     window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาดำเนินการใหม่อีกครั้ง', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
                 }
             }
@@ -175,14 +178,15 @@ function upload(imageUrl,loop) {
                            numSuccess = 0;
                            window.plugins.toast.showLongBottom('อัปโหลดสำเร็จ', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
                            imageUrl=[null,null,null,null,null];
-                           $('[id=imageNum]').attr('src','image/camera_icon_1.png');
-
+                           $('[id^=imageNum]').attr('src','image/camera_icon_1.png');
+                           $('#hn').val('');
+                           $('#fname').val('');
                        }
                        else {
-                           numName = 0;
-                           loop = 0;
-                           imgTake = 0;
-                           numSuccess = 0;
+                           //numName = 0;
+                           //loop = 0;
+                           //imgTake = 0;
+                           //numSuccess = 0;
                            window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาดำเนินการใหม่อีกครั้ง', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
                        }
                    }
@@ -276,7 +280,8 @@ function insert_location (num){
 function update_location (num){
     var hn = $('#hn').val() ;
     var numImage = num ;
-    $.ajax({
+
+  $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -289,6 +294,26 @@ function update_location (num){
             'numParam': numImage
         },
         url: "http://ahmad.16mb.com/updateDatalocation.php",
+
+        complete : function(xhr){
+            console.log( xhr.status);
+        }
+    });
+}
+
+function delete_img (){
+    var hn = $('#hn').val() ;
+
+    $.ajax({
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+            Accept: "application/json"
+        },
+        data: {'hnParam': hn
+        },
+        url: "http://ahmad.16mb.com/deleteImage.php",
 
         complete : function(xhr){
             console.log( xhr.status);

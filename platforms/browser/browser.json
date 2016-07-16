@@ -44,6 +44,9 @@
         },
         "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {},
@@ -389,6 +392,7 @@
         "cordova-plugin-geolocation": "2.2.0",
         "cordova-plugin-network-information": "1.2.1",
         "cordova-plugin-file-transfer": "1.5.1",
-        "cordova-plugin-x-toast": "2.5.2"
+        "cordova-plugin-x-toast": "2.5.2",
+        "cordova-plugin-crosswalk-webview": "1.8.0"
     }
 }
