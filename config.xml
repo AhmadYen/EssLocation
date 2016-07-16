@@ -17,7 +17,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <allow-navigation href="http://localhost*"/>
+    <allow-navigation href="http://localhost*" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
@@ -30,4 +30,9 @@
         <param name="android-package" value="nl.xservices.plugins.Toast" />
     </feature>
     <preference name="orientation" value="portrait" />
+
+    <preference name="xwalkVersion" value="19+" />
+    <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+    <preference name="xwalkMode" value="embedded" />
+    <preference name="xwalkMultipleApk" value="true" />
 </widget>
