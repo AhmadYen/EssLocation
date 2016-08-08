@@ -1,6 +1,11 @@
-$( document ).ready(function() {
+//var RootPathPHP,CheckHn,HnInLocation,InsertLocation,UpdateLocation,DeleteImage,UploadImg;
+var objPath =[];
+
+$( document).ready(function() {
     //document.addEventListener("offline", onOffline, false);
     //document.addEventListener("online", onOnline, false);
+    console.log("666666666666666666");
+    queryPathPHP() ;
 });
 
 function networkInfo() {
@@ -46,6 +51,7 @@ $('#query').click(function (){
 
             success: function (result) {
                 console.log(result);
+
                 if(result != ""){
                     $.each(result, function(i, field){
                         $('#fname').val(field.pname + " " + field.fname + " " + field.lname);
@@ -74,6 +80,42 @@ $('#query').click(function (){
 
 
 });
+
+
+
+function queryPathPHP(){
+    $.ajax({
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+            Accept: "application/json"
+        },
+
+        //----------**ต้องแก้ไขกรณีย้ายไฟล์**-----------//
+        url: "http://ahmad.16mb.com/queryPath.php",
+
+        success: function (result) {
+            console.log(result);
+            console.log("555555555555555555555555");
+            //if(result != ""){
+            //    objPath = result ;
+            //}
+            //else {
+            //    //$('#popupCloseRight').popup('open');
+            //   queryPathPHP();
+            //}
+
+        },
+        error: function (request,error) {
+            //console.log(request);
+            window.plugins.toast.showLongBottom('กรุณาตรวจสอบอินเทอร์เนต', function(a){console.log('toast success: ' + a)}
+                , function(b){alert('toast error: ' + b)});
+
+        },
+        async: false
+    });
+}
 
 
 
