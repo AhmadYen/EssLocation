@@ -83,8 +83,9 @@ function cameraTakePicture(element) {
 $('#upload').click(function(){
     //console.log(imgTake);
     getPosition();
-    delete_img();
+
     if(imgTake > 0 && $('#fname').val()!= '' && gpsStatus == true){
+        $('#loading').modal('show');
         check_hn();
         if(check_result == ""){
             insert_location(imgTake);
@@ -92,6 +93,7 @@ $('#upload').click(function(){
         else {
             update_location(imgTake);
         }
+        delete_img();
         upload(imageUrl,loop);
     }
     else if($('#fname').val()== '') {
@@ -127,6 +129,10 @@ function upload(imageUrl,loop) {
                 options.fileName = name + ".jpg";
                 options.mimeType = "image/jpeg";
                 options.chunkedMode = false;
+                var params = {};
+                params.value1 = "/Imgupload/";
+                //params.value2 = "param";
+                options.params = params;
 
                 var ft = new FileTransfer();
                 ft.upload(fileURL, encodeURI(serverUrl), win, fail, options);
@@ -142,6 +148,7 @@ function upload(imageUrl,loop) {
                     loop = 0;
                     imgTake = 0;
                     numSuccess = 0;
+                    $('#loading').modal('hide');
                     window.plugins.toast.showLongBottom('อัปโหลดสำเร็จ', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
                     imageUrl=[null,null,null,null,null];
                     $('[id^=imageNum]').attr('src','image/camera_icon_1.png');
@@ -176,6 +183,7 @@ function upload(imageUrl,loop) {
                            loop = 0;
                            imgTake = 0;
                            numSuccess = 0;
+                           $('#loading').modal('hide');
                            window.plugins.toast.showLongBottom('อัปโหลดสำเร็จ', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
                            imageUrl=[null,null,null,null,null];
                            $('[id^=imageNum]').attr('src','image/camera_icon_1.png');
@@ -320,3 +328,11 @@ function delete_img (){
         }
     });
 }
+
+//$(document).ajaxStart(function(){
+//        $('#loading').modal('show');
+//});
+
+//$(document).ajaxComplete(function(){
+//        $('#loading').modal('hide');
+//});

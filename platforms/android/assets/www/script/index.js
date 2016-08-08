@@ -66,7 +66,15 @@ $(document).ready(function() {
 });
 
 $('#start').click(function(){
-    location.href="rootPage.html" ;
+    //var status = networkInfo();
+    if(networkInfo()){
+        location.href="rootPage.html" ;
+    }
+    else {
+        window.plugins.toast.showLongBottom('กรุณาเปิดใช้งานอินเทอร์เนต', function(a){console.log('toast success: ' + a)}
+            , function(b){alert('toast error: ' + b)});
+    }
+
 });
 
 $('#back').click(function(){

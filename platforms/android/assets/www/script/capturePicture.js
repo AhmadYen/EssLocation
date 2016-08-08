@@ -123,12 +123,17 @@ function upload(imageUrl,loop) {
                 loop =loop+1;
                 console.log(fileURL);
 
-                var serverUrl = 'http://ahmad.16mb.com/uploadImg0.php';
+                //var serverUrl = 'http://ahmad.16mb.com/uploadImg0.php';
+                var serverUrl = RootPathPHP + UploadImg ;
                 var options = new FileUploadOptions();
                 options.fileKey = "file";
                 options.fileName = name + ".jpg";
                 options.mimeType = "image/jpeg";
                 options.chunkedMode = false;
+                var params = {};
+                params.value1 = "/Imgupload/";
+                //params.value2 = "param";
+                options.params = params;
 
                 var ft = new FileTransfer();
                 ft.upload(fileURL, encodeURI(serverUrl), win, fail, options);
@@ -233,6 +238,7 @@ $('#confirm_delete').click(function(){
 
 function check_hn (){
     var hn = $('#hn').val() ;
+    var url = RootPathPHP + HnInLocation ;
     $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
@@ -241,8 +247,8 @@ function check_hn (){
             Accept: "application/json"
         },
         data: { 'hnParam' : hn },
-        url: "http://ahmad.16mb.com/check_hnOnlocation.php",
-
+        //url: "http://ahmad.16mb.com/check_hnOnlocation.php",
+        url : url,
         success: function (result) {
             console.log(result);
             check_result= result ;
@@ -261,6 +267,7 @@ function check_hn (){
 function insert_location (num){
     var hn = $('#hn').val() ;
     var numImage = num ;
+    var url = RootPathPHP + InsertLocation ;
     $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
@@ -273,8 +280,8 @@ function insert_location (num){
             'lngParam': longitudeJsIndex,
             'numParam': numImage
         },
-        url: "http://ahmad.16mb.com/insertDatalocation.php",
-
+        //url: "http://ahmad.16mb.com/insertDatalocation.php",
+        url : url,
         complete : function(xhr){
            console.log( xhr.status);
         }
@@ -284,7 +291,7 @@ function insert_location (num){
 function update_location (num){
     var hn = $('#hn').val() ;
     var numImage = num ;
-
+    var url = RootPathPHP + UpdateLocation ;
   $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
@@ -297,8 +304,8 @@ function update_location (num){
             'lngParam': longitudeJsIndex,
             'numParam': numImage
         },
-        url: "http://ahmad.16mb.com/updateDatalocation.php",
-
+        //url: "http://ahmad.16mb.com/updateDatalocation.php",
+        url : url,
         complete : function(xhr){
             console.log( xhr.status);
         }
@@ -307,7 +314,7 @@ function update_location (num){
 
 function delete_img (){
     var hn = $('#hn').val() ;
-
+    var url = RootPathPHP + DeleteImage ;
     $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
@@ -317,8 +324,8 @@ function delete_img (){
         },
         data: {'hnParam': hn
         },
-        url: "http://ahmad.16mb.com/deleteImage.php",
-
+        //url: "http://ahmad.16mb.com/deleteImage.php",
+        url : url,
         complete : function(xhr){
             console.log( xhr.status);
         }
