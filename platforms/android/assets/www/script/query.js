@@ -4,8 +4,9 @@ var objPath =[];
 $( document).ready(function() {
     //document.addEventListener("offline", onOffline, false);
     //document.addEventListener("online", onOnline, false);
-    console.log("666666666666666666");
+    //console.log("666666666666666666");
     queryPathPHP() ;
+
 });
 
 function networkInfo() {

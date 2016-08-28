@@ -33,9 +33,10 @@ function cameraTakePicture(element) {
     }
 
     function onFail(message) {
-        //alert('Failed because: ' + message);
-        //window.plugins.toast.showLongBottom('', function(a){console.log('toast success: ' + a)}
-        //    , function(b){alert('toast error: ' + b)});
+        alert('Failed because: ' + message);
+        window.plugins.toast.showLongBottom('', function(a){console.log('toast success: ' + a)}
+            , function(b){alert('toast error: ' + b)});
+        //location.href="rootPage.html" ;
     }
 
     function movePic(file) {
