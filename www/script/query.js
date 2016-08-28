@@ -1,50 +1,11 @@
 
-var objPath =[];
-
 $( document).ready(function() {
-    //document.addEventListener("offline", onOffline, false);
-    //document.addEventListener("online", onOnline, false);
-    //console.log("666666666666666666");
-    queryPathPHP() ;
-
+    //<<<---- QueryPath ---->>>
+    queryPathPHP();
+    //<<<---- QueryPath ---->>>
 });
-
-function networkInfo() {
-
-        var networkState = navigator.connection.type;
-        var states = {};
-
-        //states[Connection.UNKNOWN]  = 'การเชื่อมต่อสำเร็จ';
-        //states[Connection.ETHERNET] = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.WIFI]     = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.CELL_2G]  = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.CELL_3G]  = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.CELL_4G]  = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.CELL]     = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.NONE]     = 'ไม่มีการเชื่อมต่ออินเทอร์เนต';
-
-    if(networkState == Connection.NONE){
-        return false ;
-    }
-    else {
-        return true ;
-    }
-
-    //window.plugins.toast.showLongBottom(states[networkState], function(a){console.log('toast success: ' + a)}
-    //    , function(b){alert('toast error: ' + b)});
-}
-var statusNet ;
-
-function onOffline() {
-    //statusNet = 'กรุณาเปิดใช้งานอินเทอร์เนต'
-    //status = 'off';
-}
-
-function onOnline() {
-    //status = 'on';
-}
-
-$('#query').click(function (){
+//<<<---- CheckHN ---->>>
+$('#searchHN').click(function (){
 
     var url = RootPathPHP + CheckHn ;
     if($('#hn').val() != ""){
@@ -87,12 +48,11 @@ $('#query').click(function (){
         window.plugins.toast.showLongBottom('กรุณากรอกรหัสผู้ป่วย', function(a){console.log('toast success: ' + a)}
             , function(b){alert('toast error: ' + b)});
     }
-
-
 });
+//<<<---- CheckHN ---->>>
 
+//<<<---- Query Path ---->>>
 var RootPathPHP,CheckHn,HnInLocation,InsertLocation,UpdateLocation,DeleteImage,UploadImg;
-
 function queryPathPHP(){
     $.ajax({
         type: "GET",
@@ -104,6 +64,8 @@ function queryPathPHP(){
 
         //----------**ต้องแก้ไขกรณีย้ายไฟล์**-----------//
         url: "http://ahmad.16mb.com/queryPath.php",
+        //----------**ต้องแก้ไขกรณีย้ายไฟล์**-----------//
+
 
         success: function (result) {
             console.log(result);
@@ -149,6 +111,6 @@ function queryPathPHP(){
         async: false
     });
 }
-
+//<<<---- Query Path ---->>>
 
 
