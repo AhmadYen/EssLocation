@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="214dafea-475f-43bc-bbf4-fd0f6a6f7ca6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/script/getlocation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/script/jqueryMobile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/script/getlocation.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/script/jqueryMobile.js" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/script/index.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/script/index.js" afterPath="$PROJECT_DIR$/www/script/getlocation.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/script/index.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
@@ -783,15 +786,15 @@
       <workItem from="1472032583785" duration="3096000" />
       <workItem from="1472121685859" duration="16546000" />
       <workItem from="1472321855893" duration="537000" />
-      <workItem from="1472348091989" duration="27437000" />
+      <workItem from="1472348091989" duration="27576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171292000" />
+    <option name="totallyTimeSpent" value="171431000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
