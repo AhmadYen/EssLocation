@@ -6,11 +6,18 @@ var numSuccess = 0;
 var imgTake = 0;
 var check_result ;
 
-
+//<<<----Click Img take photo- ---->>>
 $('[id^=imageNum]').click(function(){
      numIMG = this.id.split('imageNum')[1];
-    cameraTakePicture(this);
+    if(imageUrl[numIMG] == null){
+        //console.log(imageUrl[numIMG]);
+        cameraTakePicture(this);
+    }
+    else {
+        $('#test').modal('show');
+    }
 });
+//<<<----Click Img take photo- ---->>>
 
 function cameraTakePicture(element) {
     sessionStorage.removeItem('imagepath');
@@ -33,10 +40,9 @@ function cameraTakePicture(element) {
     }
 
     function onFail(message) {
-        alert('Failed because: ' + message);
-        window.plugins.toast.showLongBottom('', function(a){console.log('toast success: ' + a)}
-            , function(b){alert('toast error: ' + b)});
-        //location.href="rootPage.html" ;
+        //alert('Failed because: ' + message);
+        //window.plugins.toast.showLongBottom('', function(a){console.log('toast success: ' + a)}
+        //    , function(b){alert('toast error: ' + b)});
     }
 
     function movePic(file) {
@@ -70,7 +76,7 @@ function cameraTakePicture(element) {
         imageUrl[numIMG]=(entry);
         numIMG = null;
         imgTake++;
-        console.log(imageUrl);
+        //console.log(imageUrl);
     }
 
     function resOnError(error) {
@@ -87,7 +93,7 @@ $('#upload').click(function(){
 
     if(imgTake > 0 && $('#fname').val()!= '' && gpsStatus == true){
         $('#loading').modal('show');
-        check_hn();
+        check_hnBefore_upload();
         if(check_result == ""){
             insert_location(imgTake);
         }
@@ -237,7 +243,7 @@ $('#confirm_delete').click(function(){
 
 });
 
-function check_hn (){
+function check_hnBefore_upload (){
     var hn = $('#hn').val() ;
     var url = RootPathPHP + HnInLocation ;
     $.ajax({
@@ -333,10 +339,3 @@ function delete_img (){
     });
 }
 
-//$(document).ajaxStart(function(){
-//        $('#loading').modal('show');
-//});
-
-//$(document).ajaxComplete(function(){
-//        $('#loading').modal('hide');
-//});

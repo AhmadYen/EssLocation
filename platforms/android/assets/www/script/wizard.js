@@ -105,16 +105,6 @@ $('li[step="false"]').click(function(e){
     $('#lbNext').html("ถัดไป");
 });
 
-$('#getPosition').click(function(){
-    getPosition() ;
-});
-
-//var myVar;
-
-//function myFunction() {
-//    myVar = setTimeout(alertFunc, 3000);
-//}
-
 function nextUpload() {
 
     $('#next').css('opacity','1');

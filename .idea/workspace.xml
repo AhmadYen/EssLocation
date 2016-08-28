@@ -2,38 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="214dafea-475f-43bc-bbf4-fd0f6a6f7ca6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/wizard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/bootstrap-add-clear.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/script/wizard.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.external-png-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.external-png-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.icons-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.icons-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.inline-png-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.inline-png-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.inline-svg-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.inline-svg-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.structure-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.structure-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.theme-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/jquery.mobile.theme-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.external-png-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.external-png-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.icons-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.icons-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.inline-png-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.inline-png-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.inline-svg-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.inline-svg-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.structure-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.structure-1.4.5.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.theme-1.4.5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/jquery.mobile.theme-1.4.5.min.css" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/script/jqueryMobile.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/script/index.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/script/index.js" afterPath="$PROJECT_DIR$/www/script/getlocation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
@@ -50,18 +21,49 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/merger.xml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/style.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/alertevents-2.php" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/alertevents-2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/alertevents-3.php" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/alertevents-3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/alertevents.php" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/alertevents.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/logevents-2.php" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/logevents-2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/logevents-3.php" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/logevents-3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/logevents.php" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/demos/page-events/logevents.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/index.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/rootPage.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/rootPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/script/capturePicture.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/script/capturePicture.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/script/index.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/script/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/script/query.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/script/query.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/script/wizard.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/script/wizard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/cordova/node_modules/lodash/README.md" afterPath="$PROJECT_DIR$/platforms/android/cordova/node_modules/lodash/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/cordova/node_modules/plist/dist/plist-build.js" afterPath="$PROJECT_DIR$/platforms/android/cordova/node_modules/plist/dist/plist-build.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/cordova/node_modules/plist/dist/plist.js" afterPath="$PROJECT_DIR$/platforms/android/cordova/node_modules/plist/dist/plist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/compression/node_modules/debug/History.md" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/compression/node_modules/debug/History.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/express/node_modules/debug/History.md" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/express/node_modules/debug/History.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/express/node_modules/escape-html/Readme.md" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/express/node_modules/escape-html/Readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/express/node_modules/etag/README.md" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/express/node_modules/etag/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/express/node_modules/parseurl/README.md" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/node_modules/express/node_modules/parseurl/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/alertevents-2.php" afterPath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/alertevents-2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/alertevents-3.php" afterPath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/alertevents-3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/alertevents.php" afterPath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/alertevents.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/logevents-2.php" afterPath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/logevents-2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/logevents-3.php" afterPath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/logevents-3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/logevents.php" afterPath="$PROJECT_DIR$/platforms/browser/www/css/demos/page-events/logevents.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-camera/plugin.xml" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-camera/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-file/plugin.xml" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-file/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-media-capture/plugin.xml" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-media-capture/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-network-information/plugin.xml" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-network-information/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-toast/plugin.xml" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-toast/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/www/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/demos/page-events/alertevents-2.php" afterPath="$PROJECT_DIR$/www/css/demos/page-events/alertevents-2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/demos/page-events/alertevents-3.php" afterPath="$PROJECT_DIR$/www/css/demos/page-events/alertevents-3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/demos/page-events/alertevents.php" afterPath="$PROJECT_DIR$/www/css/demos/page-events/alertevents.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/demos/page-events/logevents-2.php" afterPath="$PROJECT_DIR$/www/css/demos/page-events/logevents-2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/demos/page-events/logevents-3.php" afterPath="$PROJECT_DIR$/www/css/demos/page-events/logevents-3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/demos/page-events/logevents.php" afterPath="$PROJECT_DIR$/www/css/demos/page-events/logevents.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/rootPage.html" afterPath="$PROJECT_DIR$/www/rootPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/script/capturePicture.js" afterPath="$PROJECT_DIR$/www/script/capturePicture.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/script/index.js" afterPath="$PROJECT_DIR$/www/script/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/script/query.js" afterPath="$PROJECT_DIR$/www/script/query.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/script/wizard.js" afterPath="$PROJECT_DIR$/www/script/wizard.js" />
     </list>
     <ignored path="EssLocation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,59 +85,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/script/index.js">
+      <file leaf-file-name="capturePicture.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/script/capturePicture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+            <state vertical-scroll-proportion="126.06896">
+              <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wizard.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/css/wizard.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5603448">
-              <caret line="137" column="19" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rootPage.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rootPage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/rootPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.0">
-              <caret line="350" column="7" selection-start-line="350" selection-start-column="7" selection-end-line="350" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.49727768">
+              <caret line="309" column="30" selection-start-line="309" selection-start-column="30" selection-end-line="309" selection-end-column="30" />
               <folding>
+                <element signature="n#header#0;n#body#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#div#3;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#center#1;n#body#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#p#0;n#div#1;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wizard.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/script/wizard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="124" column="1" selection-start-line="124" selection-start-column="1" selection-end-line="124" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -157,20 +147,23 @@
         <option value="$PROJECT_DIR$/platforms/android/project.properties" />
         <option value="$PROJECT_DIR$/www/css/jquery.mobile-1.4.5.css" />
         <option value="$PROJECT_DIR$/www/css/jquery.mobile-1.4.5.min.css" />
-        <option value="$PROJECT_DIR$/www/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/bootstrap-add-clear.js" />
         <option value="$PROJECT_DIR$/www/js/bootstrap-add-clear.min.js" />
-        <option value="$PROJECT_DIR$/www/script/query.js" />
-        <option value="$PROJECT_DIR$/www/script/capturePicture.js" />
         <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/rootPage.html" />
-        <option value="$PROJECT_DIR$/www/rootPage.html" />
-        <option value="$PROJECT_DIR$/www/script/wizard.js" />
-        <option value="$PROJECT_DIR$/www/script/index.js" />
         <option value="$PROJECT_DIR$/www/css/wizard.css" />
+        <option value="$PROJECT_DIR$/www/css/rootPage.css" />
+        <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/script/index.js" />
+        <option value="$PROJECT_DIR$/www/script/wizard.js" />
+        <option value="$PROJECT_DIR$/www/script/jqueryMobile.js" />
+        <option value="$PROJECT_DIR$/www/script/getlocation.js" />
+        <option value="$PROJECT_DIR$/www/script/query.js" />
+        <option value="$PROJECT_DIR$/www/script/capturePicture.js" />
+        <option value="$PROJECT_DIR$/www/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/www/rootPage.html" />
       </list>
     </option>
   </component>
@@ -217,9 +210,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -790,15 +783,16 @@
       <workItem from="1472032583785" duration="3096000" />
       <workItem from="1472121685859" duration="16546000" />
       <workItem from="1472321855893" duration="537000" />
+      <workItem from="1472348091989" duration="27437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143855000" />
+    <option name="totallyTimeSpent" value="171292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -806,22 +800,22 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18887262" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -837,16 +831,20 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/script/index.js">
+    <entry file="file://$PROJECT_DIR$/www/script/getlocation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#networkInfo#0" expanded="false" />
+            <element signature="n#!!block;n#onOffline#0" expanded="false" />
+            <element signature="n#!!block;n#onOnline#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -855,22 +853,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#header#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#center#1;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#1;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -901,22 +907,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="59" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
           <folding>
+            <element signature="n#header#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#center#1;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#1;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -935,7 +949,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/script/index.js">
+    <entry file="file://$PROJECT_DIR$/www/script/getlocation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
@@ -967,22 +981,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="59" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
           <folding>
+            <element signature="n#header#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#center#1;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#1;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1001,7 +1023,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/script/index.js">
+    <entry file="file://$PROJECT_DIR$/www/script/getlocation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
@@ -1033,22 +1055,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="59" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
           <folding>
+            <element signature="n#header#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#center#1;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#1;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1067,7 +1097,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/script/index.js">
+    <entry file="file://$PROJECT_DIR$/www/script/getlocation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="95" column="91" selection-start-line="95" selection-start-column="91" selection-end-line="95" selection-end-column="91" />
@@ -1099,22 +1129,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#header#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#center#1;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#1;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1144,22 +1182,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#header#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#center#1;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#1;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1188,13 +1234,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44884488">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/rootPage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34827587">
-          <caret line="80" column="7" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1258,41 +1297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="40" column="52" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#h1#0;n#center#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#center#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/script/query.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/script/capturePicture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.028052805">
-          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3652803">
-          <caret line="4" column="15856" selection-start-line="4" selection-start-column="15856" selection-end-line="4" selection-end-column="15856" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.7">
@@ -1301,60 +1305,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/rootPage.html">
+    <entry file="file://$PROJECT_DIR$/www/css/rootPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8827586">
+          <caret line="105" column="1" selection-start-line="105" selection-start-column="1" selection-end-line="105" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35172415">
-          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/jquery.mobile-1.4.5.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33272728">
+          <caret line="6" column="6748" selection-start-line="6" selection-start-column="6741" selection-end-line="6" selection-end-column="6748" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/wizard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43965518">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/script/wizard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6072607">
+          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/script/jqueryMobile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6452145">
+          <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+          <folding>
+            <element signature="e#95#145#0" expanded="false" />
+            <element signature="e#189#239#0" expanded="false" />
+            <element signature="e#367#470#0" expanded="false" />
+            <element signature="e#515#617#0" expanded="false" />
+            <element signature="e#713#761#0" expanded="false" />
+            <element signature="e#1136#1164#0" expanded="false" />
+            <element signature="n#!!block;n#CheckNum#0" expanded="false" />
+            <element signature="n#!!block;n#onDeviceReady#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/script/getlocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6353135">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!block;n#networkInfo#0" expanded="false" />
+            <element signature="n#!!block;n#onOffline#0" expanded="false" />
+            <element signature="n#!!block;n#onOnline#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/script/query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#179#1778#0" expanded="false" />
+            <element signature="n#!!block;n#queryPathPHP#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/script/capturePicture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="126.06896">
+          <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3652803">
+          <caret line="4" column="75342" selection-start-line="4" selection-start-column="75342" selection-end-line="4" selection-end-column="75342" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/rootPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.0">
-          <caret line="350" column="7" selection-start-line="350" selection-start-column="7" selection-end-line="350" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.49727768">
+          <caret line="309" column="30" selection-start-line="309" selection-start-column="30" selection-end-line="309" selection-end-column="30" />
           <folding>
+            <element signature="n#header#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#header#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#center#0;n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#ul#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#div#0;n#center#0;n#div#2;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#1;n#div#0;n#center#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#center#1;n#body#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#center#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#1;n#form#0;n#div#0;n#footer#0;n#body#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/script/wizard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="124" column="1" selection-start-line="124" selection-start-column="1" selection-end-line="124" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/script/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/wizard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5603448">
-          <caret line="137" column="19" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
