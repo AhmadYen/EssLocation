@@ -65,15 +65,15 @@ $(document).ready(function() {
     //window.plugins.toast.show('Hello there!', 'long', 'center', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 });
 
-$('#start').click(function(){
+$('#login').click(function(){
     //var status = networkInfo();
-    if(networkInfo()){
-        location.href="rootPage.html" ;
-    }
-    else {
-        window.plugins.toast.showLongBottom('กรุณาเปิดใช้งานอินเทอร์เนต', function(a){console.log('toast success: ' + a)}
-            , function(b){alert('toast error: ' + b)});
-    }
+    //if(networkInfo()){
+    location.href="rootPage.html" ;
+    //}
+    //else {
+    //    window.plugins.toast.showLongBottom('กรุณาเปิดใช้งานอินเทอร์เนต', function(a){console.log('toast success: ' + a)}
+    //        , function(b){alert('toast error: ' + b)});
+    //}
 
 });
 
@@ -81,6 +81,7 @@ $('#back').click(function(){
     location.href="index.html" ;
 });
 //////////////////////////////////////////////////////////////////////////////////
+//<<<<------GetPosition------>>>>
 function getPosition() {
     var options = {
         enableHighAccuracy: true,
@@ -93,8 +94,12 @@ function getPosition() {
 
         lattitudeJsIndex = position.coords.latitude ;
         longitudeJsIndex = position.coords.longitude ;
-        //$('#lat_label').html("Lat : " +position.coords.latitude);
-        //$('#lng_label').html("Lng : " +position.coords.longitude);
+        $('#txtLat').val(lattitudeJsIndex);
+        $('#txtLng').val(longitudeJsIndex);
+        $('#next').css('opacity','1');
+        var $active = $('.wizard .nav-tabs li.active');
+        $active.next().removeClass('disabled');
+        console.log("getposition success");
         gpsStatus = true;
     };
 
@@ -116,20 +121,20 @@ $('#close_modal').click(function(){
 });
 
 //var num_swipe = 0;
-$(document).on("pagecreate","#touch_page",function(){
+$(document).on("pagecreate","#swipe",function(){
     $("#myCarousel").on("swiperight",function(){
         //if(num_swipe > 0){
-            $("#myCarousel").carousel("prev");
+        $("#myCarousel").carousel("prev");
         //    num_swipe--;
         //}
 
     });
 });
 
-$(document).on("pagecreate","#touch_page",function(){
+$(document).on("pagecreate","#swipe",function(){
     $("#myCarousel").on("swipeleft",function(){
         //if(num_swipe < 4){
-            $("#myCarousel").carousel("next");
+        $("#myCarousel").carousel("next");
         //    num_swipe++;
         //}
 
@@ -141,10 +146,32 @@ $(document).on("pagecreate","#touch_page",function(){
  */
 $(document).on('focus',"#hn", function()
 {
-    $.mobile.activePage.find("div[data-role='footer']").hide();
+    $.mobile.activePage.find("footer").hide();
 });
 
 $(document).on('blur',"#hn", function()
 {
-    $.mobile.activePage.find("div[data-role='footer']").show();
+    $.mobile.activePage.find("footer").show();
 });
+
+$('ul').find('a').on('click', function () {
+    $(this).closest('ul').find('a').removeClass('ui-btn-active');
+    //$(this).addClass('ui-btn-active');
+});
+
+$(function(){
+    $("#hn").addClear();
+});
+
+//
+$("#myCarousel").on('swiperight',
+    function() {
+        $("#myCarousel").carousel("prev");
+    }
+);
+//
+//document.addEventListener('swiperight',
+//    function() {
+//        alert('Got that Swipe Right');
+//    }
+//);
