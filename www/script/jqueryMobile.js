@@ -51,6 +51,7 @@ $(document).ready(function() {
             interval: false
         });
     });
+
 });
 //<< photo none slide auto >>
 
@@ -63,20 +64,21 @@ function CheckNum() {
 //<<< Key press Number Hn>>>
 
 //<<<-- button back -->>>
-document.addEventListener("deviceready", onDeviceReady, false);
+function backButton(){
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
 function onDeviceReady(){
-    document.addEventListener("backbutton", function(e){
-        if(location.href="rootPage.html"){
-            //e.preventDefault();
-            //navigator.app.exitApp();
-            alert('OK');
-        }
-        else if(location.href="index.html"){
-            //navigator.app.backHistory()
-            e.preventDefault();
-            navigator.app.exitApp();
-            //alert('NO');
-        }
-    }, false);
+    document.addEventListener("backbutton",onBackKey,false);
+}
+
+function onBackKey(){
+    if(location.href="rootPage.html"){
+        e.preventDefault();
+    }
+    else if(location.href="index.html"){
+        e.preventDefault();
+        navigator.app.exitApp()
+    }
 }
 //<<<-- button back -->>>

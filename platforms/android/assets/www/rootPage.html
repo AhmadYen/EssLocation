@@ -101,7 +101,7 @@
     </style>
     <!--/*<<< style RootPage >>>*/-->
 </head>
-<body id="pageStep">
+<body id="pageStep" onload="backButton()">
 <!--<<< Header Page >>>-->
 <header class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -125,30 +125,30 @@
             <div class="connecting-line"></div>
             <ul class="nav nav-tabs" role="tablist">
 
-                <li role="presentation" class="active" hide="true" step="false">
-                    <a href="#step1" data-toggle="tab"  role="tab" title="Step 1">
+                <li role="presentation" class="active" step="1">
+                    <a href="#step1" data-toggle="tab"  role="tab" title="Step 1" >
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-search"></i>
                             </span>
                     </a>
                 </li>
 
-                <li role="presentation" class="disabled" hide="false" step="false">
-                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                <li role="presentation" class="disabled" >
+                    <a href="#step2" data-toggle="tab" hide="false"  aria-controls="step2" role="tab" title="Step 2" >
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-camera"></i>
                             </span>
                     </a>
                 </li>
-                <li role="presentation" class="disabled" hide="false" step="true">
-                    <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                <li role="presentation" class="disabled" >
+                    <a href="#step3" data-toggle="tab" hide="false" aria-controls="step3" role="tab" title="Step 3" >
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-map-marker"></i>
                             </span>
                     </a>
                 </li>
 
-                <li role="presentation" class="disabled" hide="false">
+                <li role="presentation" class="disabled" >
                     <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-ok"></i>
@@ -168,13 +168,13 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div style="width: 90%;" >
-                                <div><input id="hn" type="tel" placeholder="กรอกรหัสผู้ป่วย" class="form-control inputHn" style="text-align: center"  name="txtHn" id="hn" onkeypress="CheckNum();" maxlength="7">
+                                <div><input id="hn" type="tel"  placeholder="กรอกรหัสผู้ป่วย" class="form-control inputHn" style="text-align: center"  name="txtHn" id="hn" onkeypress="CheckNum();" maxlength="7">
                                     <button id = "searchHN"   class="form-control btnSearch" type="button"><span class="glyphicon glyphicon-search" style="font-size: 20px"></span></button>
                                 </div>
                                 <br>
                                 <form>
                                     <div>
-                                        <input  id="fname" type="text" placeholder="ชื่อ-สกุลผู้ป่วย" name="textFULLNAME" class="form-control outputDisplay" readonly style="position: relative; top: 10px; text-align: center;">
+                                        <input  id="name" type="text" placeholder="ชื่อ-สกุลผู้ป่วย" next-step="false" name="textFULLNAME" class="form-control outputDisplay" readonly style="position: relative; top: 10px; text-align: center;">
                                     </div>
 
                                     <div>
@@ -249,7 +249,7 @@
                                 <input type="text" placeholder="ละติจูด" id="txtLat" class="form-control outputDisplay" readonly style="position: relative; margin-bottom: 2%; text-align: center; font-size: 100%">
                             </div>
                             <div>
-                                <input type="text" placeholder="ลองติจูด" id="txtLng" class="form-control outputDisplay" readonly style="position: relative; margin-bottom: 5%; text-align: center; font-size: 100%">
+                                <input type="text" placeholder="ลองจิจูด" id="txtLng" class="form-control outputDisplay" readonly style="position: relative; margin-bottom: 5%; text-align: center; font-size: 100%">
                             </div>
                         </div>
                     </div>
@@ -259,8 +259,11 @@
 
             <!--< Step Complete Display>-->
             <div class="tab-pane" role="tabpanel" id="complete">
-                <h3>Complete</h3>
-                <p>You have successfully completed all steps.</p>
+                <h2>อัปโหลดเรียบร้อย</h2>
+                <p>กดปุ่ม "เสร็จสิ้น" เพื่อทำการเก็บพิกัดใหม่อีกครั้ง</p>
+                <center style="margin-top: 10%; ">
+                    <a href="#step1" data-toggle="tab"  role="tab" class="btn btn-warning" id="finish" style="width: auto; height: 40px; ">เสร็จสิ้น</a>
+                </center>
             </div>
             <!--< Step Complete Display>-->
 
@@ -273,9 +276,10 @@
 <!--<<< Wizard >>>-->
 
 <!--<<< img loading >>>-->
-<div class="modal" id="loading" style="top: 50%; text-align: center; z-index: 10;" >
+<div class="modal" id="loading" data-backdrop="static" style="top: 50%; text-align: center;" >
     <img id="i" src="image/loading_spinner.gif" style="width: 60px; height: 60px ; border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px ; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+    <h5 style="color: white">กำลังอัปโหลดรูปภาพ...</h5>
 </div>
 <!--<<< img loading >>>-->
 
@@ -284,14 +288,14 @@
     <div class="modal fade" id="test" data-backdrop="static" style="top: 40%; " >
         <div class="modal-dialog">
             <div class="modal-content" style="width: 60%; height: auto;">
-                <div class="modal-header">
+                <div class="modal-header" style="padding: 8px;">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
             <div class="modal-body">
                 <div class="list-group">
-                    <a href="#" class="list-group-item">ถ่ายภาพ</a>
-                    <a href="#" class="list-group-item">ดูรูปภาพ</a>
-                    <a href="#" class="list-group-item">ลบรูปภาพ</a>
+                    <a href="#" id="takePhoto" class="list-group-item">ถ่ายภาพ</a>
+                    <a href="#" id="showPhoto" class="list-group-item">ดูรูปภาพ</a>
+                    <a href="#" id="deletePhoto" class="list-group-item">ลบรูปภาพ</a>
                 </div>
             </div>
         </div>
@@ -299,6 +303,26 @@
     </div>
 </center>
 <!-- Menu img  -->
+
+<!-- Show img  -->
+<center>
+    <div class="modal fade" id="showIMG" data-backdrop="static" style="top: 5%; bottom: 5%;" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding: 8px;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <img  id="smallImage" src="" style="width: 95%; height: 95%;" />
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+<!-- Show img  -->
+
+
+
 
 <!--<<< Footer Page >>>-->
 <footer class="navbar navbar-inverse">
@@ -312,8 +336,8 @@
                 </div>
                 <div class="col-xs-6">
                     <p class=" pull-right next-step" id="next">
-                        <span id="lbNext" class="lbNext" >ถัดไป</span>
-                        <span  class="glyphicon glyphicon-menu-right" style="font-size: 48px; left: 5%; color: #999999;"></span>
+                            <span id="lbNext" class="lbNext" >ถัดไป</span>
+                            <span  class="glyphicon glyphicon-menu-right" style="font-size: 48px; left: 5%; color: #999999;"></span>
                     </p>
                 </div>
             </form>
@@ -328,7 +352,9 @@
 <script type="text/javascript" src="script/getlocation.js"></script>
 <script type="text/javascript" src="script/query.js"></script>
 <script type="text/javascript" src="script/capturePicture.js"></script>
-<script  src="js/vibrate.spec.js"></script>
+<script type="text/javascript" src="script/uploadImg.js"></script>
+
+<!--<script  src="js/vibrate.spec.js"></script>-->
 <!--<<< Script event >>>-->
 </body>
 </html>

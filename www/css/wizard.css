@@ -27,7 +27,7 @@ ul.nav-tabs{
     left: 0;
     right: 0;
     top: 50%;
-    z-index: 1;
+    /*z-index: 1;*/
 }
 
 .wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
@@ -45,7 +45,7 @@ span.round-tab {
     border-radius: 100px;
     background: #fff;
     border: 2px solid #ffe155;
-    z-index: 1;
+    /*z-index: 1;*/
     position: absolute;
     left: 0;
     text-align: center;
