@@ -30,8 +30,12 @@ function getPosition() {
         gpsStatus = true;
     };
     function onError(error) {
-        window.plugins.toast.showLongBottom('กรุณาตรวจสอบตำแหน่งอีกครั้ง', function(a){console.log('toast success: ' + a)}
-            , function(b){alert('toast error: ' + b)});
+        window.plugins.toast.showLongBottom('กรุณาตรวจสอบตำแหน่งอีกครั้ง', function(a){
+            //console.log('toast success: ' + a)
+        }
+            , function(b){
+                //alert('toast error: ' + b)
+            });
     };
 };
 //<<<<------GetPosition------>>>>
@@ -77,3 +81,12 @@ function onOnline() {
     //status = 'on';
 }
 //<<< Network check >>>
+
+//<<<---- Upload Active ---->>>
+function nextUpload() {
+    $('#next').css('opacity','1');
+    var $active = $('.wizard .nav-tabs li.active');
+    $active.next().removeClass('disabled');
+    $('#next').attr('upload','true');
+}
+//<<<---- Upload Active ---->>>
