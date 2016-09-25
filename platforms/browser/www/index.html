@@ -1,58 +1,63 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-        <title>GPS APP TEST</title>
-        <link rel="stylesheet"  href="css/rootPage.css">
+        <meta charset="UTF-8" name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>ESS Login</title>
         <link rel="stylesheet"  href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet"  href="css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="css/styleIndex.css">
         <script  src="js/jquery-1.11.3.min.js"></script>
-        <script  src="js/jquery.mobile-1.4.5.min.js"></script>
         <script  src="js/bootstrap.min.js"></script>
         <script src="cordova.js"></script>
+        <style>
+
+            /* enable absolute positioning */
+            .inner-addon {
+                position: relative;
+            }
+
+            /* style icon */
+            .inner-addon .glyphicon {
+                position: absolute;
+                padding: 10px;
+                pointer-events: none;
+                color: #435A5F;
+            }
+
+            /* align icon */
+            .left-addon .glyphicon  { left:  0px;}
+            .right-addon .glyphicon { right: 0px;}
+
+            /* add padding  */
+            .left-addon input  { padding-left:  30px; }
+            .right-addon input { padding-right: 30px; }
+        </style>
+
     </head>
-<body id="index">
-<div class="wrapper" data-role="page" >
-        <div role="main" class="position-element">
-            <br><br><br><br>
-            <center>
-            <img src="image/logoGps.png" width="256" height="256">
-            </center>
-            <br><br>
-            <form class="form">
-                <center>
-                    <button type="button" id="start" class="center-block blink " style="width: 250px;"><span style="padding-bottom: 20px">เริ่มต้นบันทึกตำแหน่งผู้ป่วย</span></button>
-                </center>
-            </form>
+<body home="home">
+<div class="wrapper">
+    <br><br><br>
+    <center style="z-index: 2; position: relative;">
+
+        <h3 style="margin-top: 17%">เข้าสู่ระบบจัดเก็บพิกัด</h3>
+        <h2 >ระบบเฝ้าระวังโรคระบาด</h2>
+        <div class="row" style="margin-top: 5%">
+            <div class="col-xs-12">
+                <div >
+                    <div class="" style="width: 75%; height: auto" >
+                        <!--<i class="glyphicon glyphicon-user"></i>-->
+                        <input placeholder="กรอกชื่อผู้ใช้" id="user" type="text" maxlength="6" style="text-align: center;  margin-bottom: 2%">
+                    </div>
+                    <div class="" style="width: 75%; height: auto" >
+                        <!--<i class="glyphicon glyphicon-lock"></i>-->
+                        <input  placeholder="กรอกรหัสผู้ใช้" maxlength="6" id="password" type="password" style="text-align: center; margin-bottom: 2%">
+                    </div>
+                    <div style="width: 75%;" >
+                        <button  id="login">เข้าสู่ระบบ</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </center>
     <ul class="bg-bubbles">
         <li></li>
         <li></li>
@@ -65,9 +70,10 @@
         <li></li>
         <li></li>
     </ul>
-
 </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="script/index.js"></script>
-    </body>
+
+        <script type="text/javascript" src="js/Toast.js"></script>
+        <script type="text/javascript" src="script/query.js"></script>
+        <script type="text/javascript" src="script/login.js"></script>
+</body>
 </html>

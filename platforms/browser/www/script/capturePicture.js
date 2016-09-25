@@ -1,35 +1,75 @@
 var imageUrl=[null,null,null,null,null];
-var numIMG = null ;
-var loop = 0;
-var numName = 0;
-var numSuccess = 0;
+var numIMG = null;
 var imgTake = 0;
-var check_result ;
+var imgShow ;
+var imgElement ;
 
-
+//<<<----Click Img take photo- ---->>>
 $('[id^=imageNum]').click(function(){
      numIMG = this.id.split('imageNum')[1];
-    cameraTakePicture(this);
+    if(imageUrl[numIMG] == null){
+        //console.log(imageUrl[numIMG]);
+        cameraTakePhoto(this);
+    }
+    else {
+        imgElement = this ;
+        $('#test').modal('show');
+        imgShow = imageUrl[numIMG];
+    }
 });
+//<<<----Click Img take photo- ---->>>
 
-function cameraTakePicture(element) {
+//<<<----Click Img show- ---->>>
+$('#showPhoto').click(function(){
+        $('#test').modal('hide');
+        $('#smallImage').attr('src',imgShow.nativeURL);
+        $('#showIMG').modal('show');
+});
+//<<<----Click Img show ---->>>
+
+//<<<----Click Take photo----->>>
+$('#takePhoto').click(function(){
+    $('#test').modal('hide');
+   cameraTakePhoto(imgElement);
+});
+//<<<----Click Take photo----->>>
+
+//<<<----Click Delete photo----->>>
+$('#deletePhoto').click(function(){
+    $('#test').modal('hide');
+    imgTake--;
+    if(imgTake < 3){
+        $('li[step="3"]').addClass('disabled');
+    }
+    imageUrl[imgElement.id.split('imageNum')[1]] = null ;
+    $(imgElement).attr('src','image/camera_icon_1.png');
+});
+//<<<----Click Delete photo----->>>
+
+//<<<---- Function Take Picture ---->>>
+function cameraTakePhoto(element) {
     sessionStorage.removeItem('imagepath');
     var destinationType = navigator.camera.DestinationType;
+
     navigator.camera.getPicture(onSuccess, onFail, {
         quality: 50,
         saveToPhotoAlbum: true,
         destinationType: destinationType.FILE_URI
     });
 
-
     function onSuccess(imageData) {
+        //<<<---- Set img show to html ---->>>
         var image = document.getElementById(element.id);
         image.src = imageData;
+        //console.log(imageData);
+        //<<<---- Set img show to html ---->>>
 
         if (sessionStorage.isPrototypeOf == 1) {
             getPosition();
         }
+        //<<<---- Save img to memory ---->>>
         movePic(imageData);
+        //<<<---- Save img to memory ---->>>
     }
 
     function onFail(message) {
@@ -61,7 +101,7 @@ function cameraTakePicture(element) {
             resOnError);
     }
 
-//Callback function when the file has been moved successfully - inserting the complete path
+    //Callback function when the file has been moved successfully - inserting the complete path
     function successMove(entry) {
         //Store imagepath in session for future use
         // like to store it in database
@@ -69,270 +109,18 @@ function cameraTakePicture(element) {
         imageUrl[numIMG]=(entry);
         numIMG = null;
         imgTake++;
-        console.log(imageUrl);
     }
 
     function resOnError(error) {
-        console.log(error);
+        //console.log(error);
         window.plugins.toast.showLongBottom('การบันทึกรูปภาพผิดพลาดกรุณาลองใหม่อีกครั้ง', function(a){console.log('toast success: ' + a)}
             , function(b){alert('toast error: ' + b)});
         //alert("error!!" + error.target.error.code);
     }
 }
-
-$('#upload').click(function(){
-    //console.log(imgTake);
-    getPosition();
-
-    if(imgTake > 0 && $('#fname').val()!= '' && gpsStatus == true){
-        $('#loading').modal('show');
-        check_hn();
-        if(check_result == ""){
-            insert_location(imgTake);
-        }
-        else {
-            update_location(imgTake);
-        }
-        delete_img();
-        upload(imageUrl,loop);
-    }
-    else if($('#fname').val()== '') {
-        window.plugins.toast.showLongBottom('กดตรวจสอบรหัสผู้ป่วยก่อนทำการอัปโหลด', function(a){console.log('toast success: ' + a)}
-            , function(b){alert('toast error: ' + b)});
-    }
-    //else if(gpsStatus == false) {
-    //    window.plugins.toast.showLongBottom('การค้นหาตำแหน่งผิดพลาดกรุณาตรวจสอบการก่อนทำการอัปโหลด', function(a){console.log('toast success: ' + a)}
-    //        , function(b){alert('toast error: ' + b)});
-    //}
-    else if(imgTake == 0 ) {
-        window.plugins.toast.showLongBottom('กรุณาถ่ายภาพก่อนทำการอัปโหลด', function(a){console.log('toast success: ' + a)}
-            , function(b){alert('toast error: ' + b)});
-    }
-
-});
+//<<<---- Function Take Picture ---->>>
 
 
-function upload(imageUrl,loop) {
-
-            if(loop < 5 && imageUrl[loop]!= null ){
-                var fileEntry = imageUrl[loop];
-                var fileURL = fileEntry.toURL();
-                //imageUrl[loop] = null;
-                var name = $("#hn").val() + "-" + numName;
-                numName++;
-                loop =loop+1;
-                console.log(fileURL);
-
-                var serverUrl = 'http://ahmad.16mb.com/uploadImg0.php';
-                var options = new FileUploadOptions();
-                options.fileKey = "file";
-                options.fileName = name + ".jpg";
-                options.mimeType = "image/jpeg";
-                options.chunkedMode = false;
-                var params = {};
-                params.value1 = "/Imgupload/";
-                //params.value2 = "param";
-                options.params = params;
-
-                var ft = new FileTransfer();
-                ft.upload(fileURL, encodeURI(serverUrl), win, fail, options);
-            }
-            else  if(loop < 5 ){
-                loop++;
-                upload(imageUrl,loop);
-            }
-            else {
-                //console.log(numSuccess +","+imgTake +"<<");
-                if(numSuccess == imgTake){
-                    numName = 0;
-                    loop = 0;
-                    imgTake = 0;
-                    numSuccess = 0;
-                    $('#loading').modal('hide');
-                    window.plugins.toast.showLongBottom('อัปโหลดสำเร็จ', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-                    imageUrl=[null,null,null,null,null];
-                    $('[id^=imageNum]').attr('src','image/camera_icon_1.png');
-                    $('#hn').val('');
-                    $('#fname').val('');
-                }
-                else {
-                    //numName = 0;
-                    //loop = 0;
-                    //imgTake = 0;
-                    //numSuccess = 0;
-                    window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาดำเนินการใหม่อีกครั้ง', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-                }
-            }
-
-               function win(r) {
-                   console.log("Code = " + r.responseCode);
-                   console.log("Response = " + r.response);
-                   console.log("Sent = " + r.bytesSent);
-                   numSuccess++;
-                   if(loop < 5 ){
-                       //if(imageUrl[loop] != null){
-                       //loop ++ ;
-                           upload(imageUrl,loop);
-                       //}
-
-                   }
-                   else {
-                       //console.log(numSuccess +","+imgTake +">>");
-                       if(numSuccess == imgTake){
-                           numName = 0;
-                           loop = 0;
-                           imgTake = 0;
-                           numSuccess = 0;
-                           $('#loading').modal('hide');
-                           window.plugins.toast.showLongBottom('อัปโหลดสำเร็จ', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-                           imageUrl=[null,null,null,null,null];
-                           $('[id^=imageNum]').attr('src','image/camera_icon_1.png');
-                           $('#hn').val('');
-                           $('#fname').val('');
-                       }
-                       else {
-                           //numName = 0;
-                           //loop = 0;
-                           //imgTake = 0;
-                           //numSuccess = 0;
-                           window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาดำเนินการใหม่อีกครั้ง', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-                       }
-                   }
-
-               }
 
 
-               function fail(error) {
-                   //alert("An error has occurred: Code = " + error.code);
-                   console.log(error);
-                   console.log("upload error source " + error.source);
-                   console.log("upload error target " + error.target);
 
-               }
-
-}
-
-
-$(document).on("pagecreate","#touch_page",function(){
-    $('[id^=imageNum]').on("taphold",function(){
-        $('#img_delete').html("คุณต้องการลบรูปนี้"+ " "+this.id);
-        var numArr = this.id.substring(8);
-        //alert(numArr);
-        if(imageUrl[numArr] != null){
-            $('#popupDialog').popup('open');
-            $('#popupDialog').attr("id_img",this.id);
-        }
-
-    });
-});
-
-
-$('#confirm_delete').click(function(){
-    var id =  $('#popupDialog').attr("id_img");
-    var numArr = id.substring(8);
-    imageUrl[numArr]=null ;
-    $('[id='+id+']').attr('src','image/camera_icon_1.png');
-
-});
-
-function check_hn (){
-    var hn = $('#hn').val() ;
-    $.ajax({
-        type: "GET",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        headers: {
-            Accept: "application/json"
-        },
-        data: { 'hnParam' : hn },
-        url: "http://ahmad.16mb.com/check_hnOnlocation.php",
-
-        success: function (result) {
-            console.log(result);
-            check_result= result ;
-
-        },
-        error: function (request,error) {
-            //console.log(request);
-            window.plugins.toast.showLongBottom('กรุณาตรวจสอบอินเทอร์เนต', function(a){console.log('toast success: ' + a)}
-                , function(b){alert('toast error: ' + b)});
-
-        },
-        async: false
-    });
-}
-
-function insert_location (num){
-    var hn = $('#hn').val() ;
-    var numImage = num ;
-    $.ajax({
-        type: "GET",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        headers: {
-            Accept: "application/json"
-        },
-        data: {'hnParam': hn,
-            'latParam': lattitudeJsIndex,
-            'lngParam': longitudeJsIndex,
-            'numParam': numImage
-        },
-        url: "http://ahmad.16mb.com/insertDatalocation.php",
-
-        complete : function(xhr){
-           console.log( xhr.status);
-        }
-    });
-}
-
-function update_location (num){
-    var hn = $('#hn').val() ;
-    var numImage = num ;
-
-  $.ajax({
-        type: "GET",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        headers: {
-            Accept: "application/json"
-        },
-        data: {'hnParam': hn,
-            'latParam': lattitudeJsIndex,
-            'lngParam': longitudeJsIndex,
-            'numParam': numImage
-        },
-        url: "http://ahmad.16mb.com/updateDatalocation.php",
-
-        complete : function(xhr){
-            console.log( xhr.status);
-        }
-    });
-}
-
-function delete_img (){
-    var hn = $('#hn').val() ;
-
-    $.ajax({
-        type: "GET",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        headers: {
-            Accept: "application/json"
-        },
-        data: {'hnParam': hn
-        },
-        url: "http://ahmad.16mb.com/deleteImage.php",
-
-        complete : function(xhr){
-            console.log( xhr.status);
-        }
-    });
-}
-
-//$(document).ajaxStart(function(){
-//        $('#loading').modal('show');
-//});
-
-//$(document).ajaxComplete(function(){
-//        $('#loading').modal('hide');
-//});
