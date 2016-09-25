@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <!-- <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"> -->
-
     <meta charset="UTF-8" name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <title>ESS LOCATION</title>
     <!--<<< Style CSS,JS >>>-->
     <link rel="stylesheet"  href="css/rootPage.css">
     <link rel="stylesheet"  href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/wizard.css">
-    <!--<link rel="stylesheet"  href="css/jquery.mobile-1.4.5.min.css">-->
-
     <script  src="js/jquery-1.11.3.min.js"></script>
     <script  src="js/jquery.mobile-1.4.5.min.js"></script>
     <script  src="js/bootstrap.min.js"></script>
@@ -43,14 +39,14 @@
             margin-bottom: 0;
         }
         .lbNext{
-            bottom: 15px;
+            bottom: 4px;
             position: relative;
             left: 10%;
             font-size: 25px;
             color: #999999;
         }
         .lbPrev{
-            bottom: 15px;
+            bottom: 4px;
             position: relative;
             right: 10%;
             font-size: 25px;
@@ -101,16 +97,16 @@
     </style>
     <!--/*<<< style RootPage >>>*/-->
 </head>
-<body id="pageStep" onload="backButton()">
+<body id="pageStep">
 <!--<<< Header Page >>>-->
 <header class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="pull-right" >
             <span class="glyphicon glyphicon-list dropdown-toggle" data-toggle="dropdown" style="color: #999999 ; font-size: 31px; top: 7px; left: 5px; " ></span>
             <ul class="dropdown-menu">
-                <li><a href="#">Username<span class="glyphicon glyphicon-user pull-right"></span></a></li>
+                <li><a href="#" id='lbUser'></a></li>
                 <li class="divider"></li>
-                <li ><a href="#">ออกจากระบบ<span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                <li ><a href="#" id="logout">ออกจากระบบ<span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
             </ul>
         </div>
     </div>
@@ -133,14 +129,14 @@
                     </a>
                 </li>
 
-                <li role="presentation" class="disabled" >
+                <li role="presentation" class="disabled" step="2">
                     <a href="#step2" data-toggle="tab" hide="false"  aria-controls="step2" role="tab" title="Step 2" >
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-camera"></i>
                             </span>
                     </a>
                 </li>
-                <li role="presentation" class="disabled" >
+                <li role="presentation" class="disabled" step="3">
                     <a href="#step3" data-toggle="tab" hide="false" aria-controls="step3" role="tab" title="Step 3" >
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-map-marker"></i>
@@ -148,7 +144,7 @@
                     </a>
                 </li>
 
-                <li role="presentation" class="disabled" >
+                <li role="presentation" class="disabled" step="4">
                     <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-ok"></i>
@@ -178,7 +174,7 @@
                                     </div>
 
                                     <div>
-                                        <textarea class="form-control outputDisplay" readonly rows="3" id="comment" style="height: 50%; position: relative; top: 20px;;">At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. </textarea>
+                                        <textarea id="address" class="form-control outputDisplay" readonly rows="3" id="comment" style="height: 50%; position: relative; top: 20px;;"></textarea>
                                     </div>
                                 </form>
                             </div>
@@ -204,11 +200,11 @@
                                             </div>
 
                                             <div class="item">
-                                                <img id="imageNum1" src="image/logoGps.png" class="img-responsive">
+                                                <img id="imageNum1" src="image/camera_icon_1.png" class="img-responsive">
                                             </div>
 
                                             <div class="item">
-                                                <img id="imageNum2" src="image/57269407.jpg" class="img-responsive">
+                                                <img id="imageNum2" src="image/camera_icon_1.png" class="img-responsive">
                                             </div>
 
                                             <div class="item">
@@ -246,7 +242,7 @@
                                <span class="glyphicon glyphicon-map-marker"></span>
                             </div>
                             <div>
-                                <input type="text" placeholder="ละติจูด" id="txtLat" class="form-control outputDisplay" readonly style="position: relative; margin-bottom: 2%; text-align: center; font-size: 100%">
+                                <input type="text" placeholder="ละติจูด"  id="txtLat" class="form-control outputDisplay" readonly style="position: relative; margin-bottom: 2%; text-align: center; font-size: 100%">
                             </div>
                             <div>
                                 <input type="text" placeholder="ลองจิจูด" id="txtLng" class="form-control outputDisplay" readonly style="position: relative; margin-bottom: 5%; text-align: center; font-size: 100%">
@@ -258,12 +254,26 @@
             <!--< Step 3 Display>-->
 
             <!--< Step Complete Display>-->
-            <div class="tab-pane" role="tabpanel" id="complete">
-                <h2>อัปโหลดเรียบร้อย</h2>
-                <p>กดปุ่ม "เสร็จสิ้น" เพื่อทำการเก็บพิกัดใหม่อีกครั้ง</p>
-                <center style="margin-top: 10%; ">
-                    <a href="#step1" data-toggle="tab"  role="tab" class="btn btn-warning" id="finish" style="width: auto; height: 40px; ">เสร็จสิ้น</a>
-                </center>
+            <div class="tab-pane " role="tabpanel" id="complete">
+                    <div class="row" style="width: 90%">
+                        <div class="col-xs-12">
+                            <h5 style="text-align: left; position: relative">อัปโหลดข้อมูลผู้ป่วยเรียบร้อย</h5>
+                            <div>
+                                <input style="margin: 3px"  type="text" id="patient" next-step="false" name="textFULLNAME" class="form-control outputDisplay" readonly ; >
+                            </div>
+                            <h5 style="text-align: left; position: relative">พิกัดผู้ป่วย</h5>
+                            <div>
+                                <input style="margin: 4px" type="text" id="latFinish" class="form-control outputDisplay" readonly ; >
+                            </div>
+                            <div>
+                                <input style="margin: 4px" type="text" id="lngFinish" class="form-control outputDisplay" readonly ;>
+                            </div>
+                            <div id="fnImage"></div>
+                        </div>
+                    </div>
+                <!--<center style="margin-top: 10%; ">-->
+                    <!--<a href="#step1" data-toggle="tab"  role="tab" class="btn btn-warning" id="" style="width: auto; height: 40px; ">เสร็จสิ้น</a>-->
+                <!--</center>-->
             </div>
             <!--< Step Complete Display>-->
 
@@ -279,7 +289,7 @@
 <div class="modal" id="loading" data-backdrop="static" style="top: 50%; text-align: center;" >
     <img id="i" src="image/loading_spinner.gif" style="width: 60px; height: 60px ; border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px ; border-top-left-radius: 20px; border-top-right-radius: 20px;">
-    <h5 style="color: white">กำลังอัปโหลดรูปภาพ...</h5>
+    <h5 style="color: white">กำลังอัปโหลด...</h5>
 </div>
 <!--<<< img loading >>>-->
 
@@ -321,23 +331,20 @@
 </center>
 <!-- Show img  -->
 
-
-
-
 <!--<<< Footer Page >>>-->
 <footer class="navbar navbar-inverse">
     <div class="row">
-            <form class="form-inline">
-                <div class="col-xs-6">
+            <form class="form-inline" id="stepFooter">
+                <div id="prevs" class="col-xs-6">
                     <p class="pull-left prev-step" id="prev" >
-                        <span class="glyphicon glyphicon-menu-left" style="font-size: 48px; right: 5%; color: #999999;"></span>
+                        <span class="glyphicon glyphicon-menu-left" style="font-size: 35px; top: 6px; right: 5%; color: #999999;"></span>
                         <span id="lbPrev" class="lbPrev">ก่อนหน้า</span>
                     </p>
                 </div>
-                <div class="col-xs-6">
+                <div id="nexts" class="col-xs-6">
                     <p class=" pull-right next-step" id="next">
                             <span id="lbNext" class="lbNext" >ถัดไป</span>
-                            <span  class="glyphicon glyphicon-menu-right" style="font-size: 48px; left: 5%; color: #999999;"></span>
+                            <span  class="glyphicon glyphicon-menu-right" style="font-size: 35px; top: 6px; left: 5%; color: #999999;"></span>
                     </p>
                 </div>
             </form>
@@ -353,8 +360,7 @@
 <script type="text/javascript" src="script/query.js"></script>
 <script type="text/javascript" src="script/capturePicture.js"></script>
 <script type="text/javascript" src="script/uploadImg.js"></script>
-
-<!--<script  src="js/vibrate.spec.js"></script>-->
+ <script type="text/javascript" src="script/login.js"></script>
 <!--<<< Script event >>>-->
 </body>
 </html>

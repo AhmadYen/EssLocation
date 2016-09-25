@@ -38,6 +38,9 @@ $('#takePhoto').click(function(){
 $('#deletePhoto').click(function(){
     $('#test').modal('hide');
     imgTake--;
+    if(imgTake < 3){
+        $('li[step="3"]').addClass('disabled');
+    }
     imageUrl[imgElement.id.split('imageNum')[1]] = null ;
     $(imgElement).attr('src','image/camera_icon_1.png');
 });

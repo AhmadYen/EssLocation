@@ -26,7 +26,7 @@ $(document).ready(function () {
                    nextTab($active);
                }
                else{
-                   $('#next').css('opacity','0.5');
+                   //$('#next').css('opacity','0.5');
                    window.plugins.toast.showLongBottom('กรุณาตรวจสอบรหัสผู้ป่วยก่อนไปยังขั้นตอนถัดไป', function(a)
                    {
                        //console.log('toast success: ' + a)
@@ -68,7 +68,7 @@ $(document).ready(function () {
                uploadImageToServer();
            }
            else {
-               window.plugins.toast.showLongBottom('กรุณาค้นหาตำแหน่งก่อนทำการอัปโหลด', function(a){
+               window.plugins.toast.showLongBottom('กรุณาค้นหาพิกัดก่อนทำการอัปโหลด', function(a){
                    //console.log('toast success: ' + a)
                }
                    , function(b){
@@ -95,7 +95,7 @@ function nextTab(elem) {
     $(elem).next().find('a[data-toggle="tab"]').removeAttr('hide');
 
     if( $('#step3').hasClass("active") && gpsStatus == false){
-        $('#next').css('opacity','0.5');
+        //$('#next').css('opacity','0.5');
         $('#lbNext').html("อัปโหลด");
     }
     else if( $('#step3').hasClass("active") && gpsStatus == true){
@@ -103,11 +103,11 @@ function nextTab(elem) {
         $('#next').attr('upload','true');
     }
     else  if($('#step2').hasClass("active") && imgTake  < 3 ) {
-        $('#next').css('opacity','0.5');
+        //$('#next').css('opacity','0.5');
         $('#lbNext').html("ถัดไป");
     }
     else {
-        $('#next').css('opacity','1');
+        //$('#next').css('opacity','1');
         $('#lbNext').html("ถัดไป");
     }
 
@@ -142,7 +142,7 @@ function prevTab(elem) {
 $(document).ready(function(){
     if( $('#step1').hasClass("active")){
         $('#prev').hide();
-        $('#next').css('opacity','0.5');
+        //$('#next').css('opacity','0.5');
     }
     else {
         $('#prev').show();
@@ -157,44 +157,52 @@ $('a[data-toggle="tab"]').click(function(e){
         //$('#next').css('opacity','1');
         $('#lbNext').html("ถัดไป");
         $('#prev').hide();
+        $('#next').removeAttr('upload');
     }
     else if($(this).attr('href') == "#step2"){
-        if($(this).attr('hide')){
-            //$('#prev').hide();
-        }
-        else {
-            //$('#next').css('opacity','1');
+        //if($(this).attr('hide')){
+        //    //$('#prev').hide();
+        //}
+        //else {
+        //    //$('#next').css('opacity','1');
+        //    $('#lbNext').html("ถัดไป");
+        //    $('#prev').show();
+        //}
+        if(! $('li[step="2"]').hasClass('disabled')){
             $('#lbNext').html("ถัดไป");
             $('#prev').show();
+            $('#next').removeAttr('upload');
         }
 
     }
     else if($(this).attr('href') == "#step3"){
-        if($(this).attr('hide')){
-            //$('#prev').hide();
-        }
-        else {
-            //$('#next').css('opacity','0.5');
+        //if($(this).attr('hide')){
+        //    //$('#prev').hide();
+        //}
+        //else {
+        //    //$('#next').css('opacity','0.5');
+        //    $('#lbNext').html("อัปโหลด");
+        //    $('#prev').show();
+        //}
+        if(! $('li[step="3"]').hasClass('disabled') && imgTake >= 3){
+            $('#next').attr('upload','true');
             $('#lbNext').html("อัปโหลด");
             $('#prev').show();
         }
     }
 });
 //<<<--- Click Wizard navbar ---->>>
-
-$('#finish').click(function(){
-    location.href="rootPage.html" ;
-    //if( $('#step1').hasClass("active")){
-    //    $('#prev').hide();
-    //    $('#next').css('opacity','0.5');
-    //    $('#lbNext').html("ถัดไป");
-    //}
-    //else {
-    //    $('#prev').show();
-    //}
-    //$('li[role="presentation"]').addClass('disabled');
-    //$('li[step="1"]').addClass('active');
-});
+function finish(){
+    numName = 0;
+    loop = 0;
+    imgTake = 0;
+    numSuccess = 0;
+    imageUrl = [null, null, null, null, null];
+    $('[id^=imageNum]').attr('src', 'image/camera_icon_1.png');
+    $('#hn').val('');
+    $('#name').val('');
+    window.location = window.location.href;
+};
 
 function addClassDisable (){
     $('a[href="#step1"]').attr('hide','true');

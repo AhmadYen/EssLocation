@@ -1,42 +1,14 @@
-//var RootPathPHP,CheckHn,HnInLocation,InsertLocation,UpdateLocation,DeleteImage,UploadImg;
-var objPath =[];
-
+var username = '' ;
+var assignby = '' ;
 $( document).ready(function() {
-    //document.addEventListener("offline", onOffline, false);
-    //document.addEventListener("online", onOnline, false);
-    console.log("666666666666666666");
-    queryPathPHP() ;
+    //<<<---- QueryPath ---->>>
+    queryPathPHP();
+    //<<<---- QueryPath ---->>>
 });
+//<<<---- CheckHN ---->>>
+$('#searchHN').click(function (){
 
-function networkInfo() {
-        var networkState = navigator.connection.type;
-        var states = {};
-
-        //states[Connection.UNKNOWN]  = 'การเชื่อมต่อสำเร็จ';
-        //states[Connection.ETHERNET] = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.WIFI]     = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.CELL_2G]  = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.CELL_3G]  = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.CELL_4G]  = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.CELL]     = 'การเชื่อมต่อสำเร็จ';
-        states[Connection.NONE]     = 'ไม่มีการเชื่อมต่ออินเทอร์เนต';
-
-    window.plugins.toast.showLongBottom(states[networkState], function(a){console.log('toast success: ' + a)}
-        , function(b){alert('toast error: ' + b)});
-}
-var statusNet ;
-var status ;
-function onOffline() {
-    statusNet = 'กรุณาเปิดใช้งานอินเทอร์เนต'
-    status = 'off';
-}
-
-function onOnline() {
-    status = 'on';
-}
-
-$('#query').click(function (){
-
+    var url = RootPathPHP + CheckHn ;
     if($('#hn').val() != ""){
         var hn = $('#hn').val() ;
         $.ajax({
@@ -47,42 +19,66 @@ $('#query').click(function (){
                 Accept: "application/json"
             },
             data: { 'hnParam' : hn },
-            url: "http://ahmad.16mb.com/queryData.php",
-
+            //url: "http://ahmad.16mb.com/PatientInformation.php",
+            url : url,
             success: function (result) {
                 console.log(result);
 
                 if(result != ""){
                     $.each(result, function(i, field){
-                        $('#fname').val(field.pname + " " + field.fname + " " + field.lname);
+                        $('#name').val(field.pname + " " + field.fname + " " + field.lname);
+                        $('#address').val(field.addrpart +" "+ field.moopart +" "+ field.address + "" + field.po_code);
                     });
+                    $('#name').attr('next-step','true');
                 }
                 else {
-                    //$('#popupCloseRight').popup('open');
-                    window.plugins.toast.showLongBottom('ไม่พบรหัสผู้ป่วยกรุณาตรวจสอบใหม่อีกครั้ง', function(a){console.log('toast success: ' + a)}
-                        , function(b){alert('toast error: ' + b)});
+                    $('#name').val('');
+                    $('#address').val('');
+                    $('#name').removeAttr('next-step','true');
+                    $('li[step="2"]').addClass('disabled');
+                    $('li[step="3"]').addClass('disabled');
+                    $('li[step="4"]').addClass('disabled');
+                    window.plugins.toast.showLongBottom('ไม่พบรหัสผู้ป่วยกรุณาตรวจสอบใหม่อีกครั้ง', function(a){
+                        //console.log('toast success: ' + a)
+                    }
+                        , function(b){
+                            //alert('toast error: ' + b)
+                        });
                 }
 
             },
             error: function (request,error) {
-                //console.log(request);
-                window.plugins.toast.showLongBottom('กรุณาตรวจสอบอินเทอร์เนต', function(a){console.log('toast success: ' + a)}
-                    , function(b){alert('toast error: ' + b)});
+
+                window.plugins.toast.showLongBottom('กรุณาตรวจสอบอินเทอร์เนต', function(a){
+                    //console.log('toast success: ' + a)
+                }
+                    , function(b){
+                        //alert('toast error: ' + b)
+                    });
 
             },
             async: false
         });
     }
     else {
-        window.plugins.toast.showLongBottom('กรุณากรอกรหัสผู้ป่วย', function(a){console.log('toast success: ' + a)}
-            , function(b){alert('toast error: ' + b)});
+        $('#name').val('');
+        $('#address').val('');
+        $('#name').removeAttr('next-step','true');
+        $('li[step="2"]').addClass('disabled');
+        $('li[step="3"]').addClass('disabled');
+        $('li[step="4"]').addClass('disabled');
+        window.plugins.toast.showLongBottom('กรุณากรอกรหัสผู้ป่วย', function(a){
+            //console.log('toast success: ' + a)
+        }
+            , function(b){
+                //alert('toast error: ' + b)
+            });
     }
-
-
 });
+//<<<---- CheckHN ---->>>
 
-
-
+//<<<---- Query Path ---->>>
+var RootPathPHP,CheckHn,HnInLocation,InsertLocation,UpdateLocation,DeleteImage,UploadImg,CheckLogin;
 function queryPathPHP(){
     $.ajax({
         type: "GET",
@@ -94,28 +90,202 @@ function queryPathPHP(){
 
         //----------**ต้องแก้ไขกรณีย้ายไฟล์**-----------//
         url: "http://ahmad.16mb.com/queryPath.php",
+        //----------**ต้องแก้ไขกรณีย้ายไฟล์**-----------//
+
 
         success: function (result) {
-            console.log(result);
-            console.log("555555555555555555555555");
-            //if(result != ""){
-            //    objPath = result ;
-            //}
-            //else {
-            //    //$('#popupCloseRight').popup('open');
-            //   queryPathPHP();
-            //}
+            if(result != ""){
+                $.each(result, function(i, field){
+                    if(field.name == 'RootPathPHP'){
+                        RootPathPHP = field.value ;
+                    }
+                    else if(field.name == 'CheckHn'){
+                        CheckHn = field.value ;
+                    }
+                    else if(field.name == 'HnInLocation'){
+                        HnInLocation = field.value ;
+                    }
+                    else if(field.name == 'InsertLocation'){
+                        InsertLocation = field.value ;
+                    }
+                    else if(field.name == 'UpdateLocation'){
+                        UpdateLocation = field.value ;
+                    }
+                    else if(field.name == 'DeleteImage'){
+                        DeleteImage = field.value ;
+                    }
+                    else if(field.name == 'UploadImg'){
+                        UploadImg = field.value ;
+                    }
+                    else if(field.name == 'CheckLogin'){
+                        CheckLogin = field.value ;
+                    }
+
+                });
+            }
+            else {
+
+               queryPathPHP();
+            }
 
         },
         error: function (request,error) {
             //console.log(request);
-            window.plugins.toast.showLongBottom('กรุณาตรวจสอบอินเทอร์เนต', function(a){console.log('toast success: ' + a)}
-                , function(b){alert('toast error: ' + b)});
+            window.plugins.toast.showLongBottom('กรุณาตรวจสอบอินเทอร์เนต', function(a){
+                //console.log('toast success: ' + a)
+            }
+                , function(b){
+                    //alert('toast error: ' + b)
+                });
 
         },
         async: false
     });
 }
+//<<<---- Query Path ---->>>
 
+//<<<---- UpdateLocation to DataBase ---->>>
+function update_location (num){
+    var hn = $('#hn').val() ;
+    var numImage = num ;
+    var url = RootPathPHP + UpdateLocation ;
+    var user = username ;
+    $.ajax({
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+            Accept: "application/json"
+        },
+        data: {'hnParam': hn,
+            'latParam': lattitudeJsIndex,
+            'lngParam': longitudeJsIndex,
+            'numParam': numImage,
+            'user': user,
+            'assignby' : assignby
+        },
+        //url: "http://ahmad.16mb.com/updateDatalocation.php",
+        url : url,
+        success : function(result){
+            console.log(result);
+            if(result){
+                delete_img();
+                upload(imageUrl,loop);
+            }
+            else {
+                $('#loading').modal('hide');
+                window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาลองใหม่อีกครั้ง', function(a){
+                        //console.log('toast success: ' + a)
+                    }
+                    , function(b){
+                        //alert('toast error: ' + b)
+                    });
+            }
+        },
+        error: function (request,error) {
+            //console.log(request);
+            $('#loading').modal('hide');
+            window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาลองใหม่อีกครั้ง', function(a){
+                    //console.log('toast success: ' + a)
+                }
+                , function(b){
+                    //alert('toast error: ' + b)
+                });
 
+        },
+        async: false
 
+    });
+}
+//<<<---- UpdateLocation to DataBase ---->>>
+
+//<<<---- Delete on Server ---->>>
+function delete_img (){
+    var hn = $('#hn').val() ;
+    var url = RootPathPHP + DeleteImage ;
+    $.ajax({
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+            Accept: "application/json"
+        },
+        data: {'hnParam': hn
+        },
+        //url: "http://ahmad.16mb.com/deleteImage.php",
+        url : url,
+        complete : function(xhr){
+            console.log( xhr.status);
+        }
+    });
+}
+//<<<---- Delete on Server ---->>>
+
+//<<<---- Check hn Before upload ---->>>
+
+function checkLogin(){
+    var url = RootPathPHP + CheckLogin ;
+    $.ajax({
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+            Accept: "application/json"
+        },
+        data: { 'username' : $('#user').val(),
+                'password' : $('#password').val()},
+
+        //url: "http://ahmad.16mb.com/checkLogin.php",
+        url : url,
+        success: function (result) {
+            console.log(result);
+
+            if(result != ""){
+                $.each(result, function(i, field){
+                    if($('#user').val() == field.username && $('#password').val() == field.password && field.assignby != null) {
+                        username = '?username='+field.username;
+                        assignby = '&assignby='+field.assignby;
+                        window.location = '../www/rootPage.html'+username+assignby;
+                    }
+                    else if($('#user').val() != field.username || $('#password').val() != field.password ){
+                        window.plugins.toast.showLongBottom('ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้องกรุณาตรวจสอบอีกครั้ง', function(a){
+                                //console.log('toast success: ' + a)
+                            }
+                            , function(b){
+                                //alert('toast error: ' + b)
+                            });
+                    }
+                    else if($('#user').val() == field.username && $('#password').val() == field.password && field.assignby == '' || field.assignby == null) {
+                        window.plugins.toast.showLongBottom('ไม่สามารถเข้าสู่ระบบได้กรุณาติดต่อเจ้าหน้าที่', function(a){
+                                //console.log('toast success: ' + a)
+                            }
+                            , function(b){
+                                //alert('toast error: ' + b)
+                            });
+                    }
+                });
+
+            }
+            else {
+                window.plugins.toast.showLongBottom('ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้องกรุณาตรวจสอบอีกครั้ง', function(a){
+                        //console.log('toast success: ' + a)
+                    }
+                    , function(b){
+                        //alert('toast error: ' + b)
+                    });
+            }
+
+        },
+        error: function (request,error) {
+            console.log(error);
+            //window.plugins.toast.showLongBottom('กรุณาตรวจสอบอินเทอร์เนต', function(a){
+            //        //console.log('toast success: ' + a)
+            //    }
+            //    , function(b){
+            //        //alert('toast error: ' + b)
+            //    });
+
+        },
+        async: false
+    });
+}
