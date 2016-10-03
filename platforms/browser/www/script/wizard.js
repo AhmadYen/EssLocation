@@ -21,12 +21,18 @@ $(document).ready(function () {
            //    $active.next().removeClass('disabled');
            //}
            if($('#step1').hasClass("active")){
-               if($('#name').attr('next-step') == "true"){
+               if($('#name').attr('next-step') == "true" && $('#hn').val() != '' && $('#name').val() !=''){
                    $active.next().removeClass('disabled');
                    nextTab($active);
                }
                else{
                    //$('#next').css('opacity','0.5');
+                   $('#name').val('');
+                   $('#address').val('');
+                   $('#name').removeAttr('next-step','true');
+                   $('li[step="2"]').addClass('disabled');
+                   $('li[step="3"]').addClass('disabled');
+                   $('li[step="4"]').addClass('disabled');
                    window.plugins.toast.showLongBottom('กรุณาตรวจสอบรหัสผู้ป่วยก่อนไปยังขั้นตอนถัดไป', function(a)
                    {
                        //console.log('toast success: ' + a)
@@ -153,10 +159,11 @@ $(document).ready(function(){
 
 //<<<--- Click Wizard navbar ---->>>
 $('a[data-toggle="tab"]').click(function(e){
-    if($(this).attr('href')== "#step1"){
+    if($(this).attr('href')== "#step1" ){
         //$('#next').css('opacity','1');
         $('#lbNext').html("ถัดไป");
         $('#prev').hide();
+        $('#next').removeAttr('upload');
     }
     else if($(this).attr('href') == "#step2"){
         //if($(this).attr('hide')){
@@ -170,6 +177,7 @@ $('a[data-toggle="tab"]').click(function(e){
         if(! $('li[step="2"]').hasClass('disabled')){
             $('#lbNext').html("ถัดไป");
             $('#prev').show();
+            $('#next').removeAttr('upload');
         }
 
     }
@@ -183,6 +191,7 @@ $('a[data-toggle="tab"]').click(function(e){
         //    $('#prev').show();
         //}
         if(! $('li[step="3"]').hasClass('disabled') && imgTake >= 3){
+            $('#next').attr('upload','true');
             $('#lbNext').html("อัปโหลด");
             $('#prev').show();
         }

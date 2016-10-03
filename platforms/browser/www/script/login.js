@@ -15,7 +15,10 @@ function onBackKey(){
 $('#login').click(function(){
     networkInfo();
     if($('#user').val() != '' && $('#password').val() !=''&& statusNet == true) {
+        queryPathPHP();
+        //$('#loading2').modal('show');
         checkLogin();
+
     }
     else if($('#user').val() == '' && $('#password').val() =='' && statusNet == true){
         window.plugins.toast.showLongBottom('กรุณากรอกชื่อผู้ใช้งานและรหัสผ่าน', function(a){
@@ -33,19 +36,37 @@ $('#login').click(function(){
                 //alert('toast error: ' + b)
             });
     }
+    else if($('#user').val() == '' && $('#password').val() =='' && statusNet == false){
+        window.plugins.toast.showLongBottom('กรุณาเปิดใช้งานอินเทอร์เนต', function(a){
+                //console.log('toast success: ' + a)
+            }
+            , function(b){
+                //alert('toast error: ' + b)
+            });
+    }
 
 });
 
 $('#logout').click(function(){
-    var r = confirm("คุณต้องการออกจากระบบใช่หรือไม่");
-    if (r == true) {
-        location.href = 'index.html';
-        username = ''; assignby = '';
-    } else {
-
-    }
+    //var r = confirm("คุณต้องการออกจากระบบใช่หรือไม่");
+    //if (r == true) {
+    //    location.href = 'index.html';
+    //    username = ''; assignby = '';
+    //} else {
+    //
+    //}
+    showConfirm();
 });
 ///<<<-- Login & Logout -->>
+
+function showConfirm() {
+    navigator.notification.confirm(
+        'You are the winner!',  // message
+        function (){ location.href = 'index.html'; },              // callback to invoke with index of button pressed
+        'Game Over',            // title
+        'Restart,Exit'          // buttonLabels
+    );
+}
 
  //<<< Network check >>>
 function networkInfo() {
@@ -60,14 +81,16 @@ function networkInfo() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
-
-    if(Connection.NONE){
+    //console.log(networkState);
+    //console.log(states);
+    if(networkState == 'none'){
         statusNet = false ;
-        return statusNet ;
+        //return statusNet ;
     }
     else {
         statusNet = true ;
-        return statusNet ;
+        queryPathPHP();
+        //return statusNet ;
     }
 }
 

@@ -57,6 +57,7 @@ function upload(imageUrl,loop) {
             addClassDisable();
             $('#stepFooter').append('<div class="col-xs-12" style="top: 4px; text-align: center;">'+
                 '<p id="finish" onclick="finish()" style="font-size: 25px; color: #999999;">เสร็จสิ้น</p></div>');
+            showImgComplete();
         }
         else {
             $('#loading').modal('hide');
@@ -82,8 +83,8 @@ function upload(imageUrl,loop) {
                     //alert('toast error: ' + b)
                 });
                 $('#patient').val( $('#name').val());
-                $('#latFinish').val('ละติจูต : ' + $('#txtLat').val());
-                $('#lngFinish').val('ลองจิจูด : ' + $('#txtLng').val());
+                $('#latFinish').val($('#txtLat').val());
+                $('#lngFinish').val($('#txtLng').val());
                 var $active = $('.wizard .nav-tabs li.active');
                 $active.next().removeClass('disabled');
                 nextTab($active);
@@ -97,6 +98,7 @@ function upload(imageUrl,loop) {
                 addClassDisable();
                 $('#stepFooter').append('<div class="col-xs-12" style="top: 4px; text-align: center;">'+
                     '<p id="finish" onclick="finish()" style="font-size: 25px; color: #999999;">เสร็จสิ้น</p></div>');
+                showImgComplete();
             }
             else {
                 $('#loading').modal('hide');
@@ -118,3 +120,16 @@ function upload(imageUrl,loop) {
 
 }
 //<<<---- Func Upload ---->>>
+
+
+function showImgComplete (){
+    var show = '<h5 style="text-align: left; position: relative; margin-top: 15px">รูปภาพที่พักผู้ป่วย</h5><div>' ;
+    $.each(imageUrl, function( index, value ) {
+        //alert( index + ": " + value.nativeURL );
+        if(value != null){
+            show = show.concat('<img class="form-inline"  src="'+value.nativeURL+'" class="img-responsive" style="height: 50px; margin: 2px">');
+        }
+
+    });
+    $('#fnImage').html(show+'</div>');
+}
