@@ -1,5 +1,6 @@
 $(document).ready(function() {
     //<< photo none slide auto >>
+
     $('.carousel').each(function(){
         $(this).carousel({
             interval: false
@@ -70,6 +71,15 @@ $(document).click(function(){
 $(function(){
     $("#hn").addClear();
 });
+
+//$('#clearHn').click(function(){
+//
+//        $('#name').removeAttr('next-step','true');
+//        $('li[step="2"]').addClass('disabled');
+//        $('li[step="3"]').addClass('disabled');
+//        $('li[step="4"]').addClass('disabled');
+//
+//});
 //<< Clear text >>
 
 //<<< Key press Number Hn>>>

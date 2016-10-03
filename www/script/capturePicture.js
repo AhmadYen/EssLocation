@@ -42,7 +42,7 @@ $('#deletePhoto').click(function(){
         $('li[step="3"]').addClass('disabled');
     }
     imageUrl[imgElement.id.split('imageNum')[1]] = null ;
-    $(imgElement).attr('src','image/camera_icon_1.png');
+    $(imgElement).attr('src','image/takePhoto.png');
 });
 //<<<----Click Delete photo----->>>
 
@@ -113,8 +113,7 @@ function cameraTakePhoto(element) {
 
     function resOnError(error) {
         //console.log(error);
-        window.plugins.toast.showLongBottom('การบันทึกรูปภาพผิดพลาดกรุณาลองใหม่อีกครั้ง', function(a){console.log('toast success: ' + a)}
-            , function(b){alert('toast error: ' + b)});
+        window.plugins.toast.showLongBottom('การบันทึกรูปภาพผิดพลาดกรุณาลองใหม่อีกครั้ง');
         //alert("error!!" + error.target.error.code);
     }
 }

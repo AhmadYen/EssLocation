@@ -61,11 +61,7 @@ function upload(imageUrl,loop) {
         }
         else {
             $('#loading').modal('hide');
-            window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาลองใหม่อีกครั้ง', function (a) {
-                //console.log('toast success: ' + a)
-            }, function (b) {
-                //alert('toast error: ' + b)
-            });
+            window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาลองใหม่อีกครั้ง');
         }
     }
 
@@ -77,14 +73,10 @@ function upload(imageUrl,loop) {
         else {
             if (numSuccess == imgTake) {
                 $('#loading').modal('hide');
-                window.plugins.toast.showLongBottom('อัปโหลดสำเร็จ', function (a) {
-                    //console.log('toast success: ' + a)
-                }, function (b) {
-                    //alert('toast error: ' + b)
-                });
+                window.plugins.toast.showLongBottom('อัปโหลดสำเร็จ');
                 $('#patient').val( $('#name').val());
-                $('#latFinish').val('ละติจูต : ' + $('#txtLat').val());
-                $('#lngFinish').val('ลองจิจูด : ' + $('#txtLng').val());
+                $('#latFinish').val($('#txtLat').val());
+                $('#lngFinish').val($('#txtLng').val());
                 var $active = $('.wizard .nav-tabs li.active');
                 $active.next().removeClass('disabled');
                 nextTab($active);
@@ -102,11 +94,7 @@ function upload(imageUrl,loop) {
             }
             else {
                 $('#loading').modal('hide');
-                window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาลองใหม่อีกครั้ง', function (a) {
-                    //console.log('toast success: ' + a)
-                }, function (b) {
-                    //alert('toast error: ' + b)
-                });
+                window.plugins.toast.showLongBottom('อัปโหลดไม่สำเร็จ กรุณาลองใหม่อีกครั้ง');
             }
         }
 
@@ -123,13 +111,11 @@ function upload(imageUrl,loop) {
 
 
 function showImgComplete (){
-    var show = '<h5 style="text-align: left; position: relative">พิกัดผู้ป่วย</h5><div>' ;
+    var show = '<h5 style="text-align: left; position: relative; margin-top: 15px">รูปภาพที่พักผู้ป่วย</h5><div>' ;
     $.each(imageUrl, function( index, value ) {
-        //alert( index + ": " + value.nativeURL );
         if(value != null){
-            show = show.concat('<img class="form-inline" id="imageNum1" src="'+value.nativeURL+'" class="img-responsive" style="width: 20%; margin: 4px">');
+            show = show.concat('<img class="form-inline"  src="'+value.nativeURL+'" class="img-responsive" style="height: 50px; margin: 2px">');
         }
-
     });
-    $('#fnImage').append(show+'</div>');
+    $('#fnImage').html(show+'</div>');
 }

@@ -9,7 +9,7 @@
     <script  src="js/jquery-1.11.3.min.js"></script>
     <script  src="js/jquery.mobile-1.4.5.min.js"></script>
     <script  src="js/bootstrap.min.js"></script>
-    <script  src="js/bootstrap-add-clear.min.js"></script>
+    <script  src="js/bootstrap-clear.js"></script>
     <script  src="js/bootbox.min.js"></script>
     <script src="cordova.js"></script>
     <!--<<< Style CSS,JS >>>-->
@@ -93,7 +93,13 @@
             font-size: 80px;
             margin-bottom: 30px;
         }
-
+        @font-face {
+            font-family: "customfont";
+            src: url("fonts/upcjl.ttf") format("opentype");
+        }
+        body {
+            font-family: "customfont";
+        }
     </style>
     <!--/*<<< style RootPage >>>*/-->
 </head>
@@ -158,7 +164,7 @@
         <!--< tab wizard >-->
         <div class="tab-content ">
             <!--< Step 1 Display>-->
-            <div class="tab-pane active" role="tabpanel" id="step1">
+            <div class="tab-pane " role="tabpanel" id="step1">
                 <div class="row"><h4 class="col-xs-6">ขั้นตอนที่ 1</h4></div><br>
                 <center>
                     <div class="row">
@@ -174,7 +180,7 @@
                                     </div>
 
                                     <div>
-                                        <textarea id="address" class="form-control outputDisplay" readonly rows="3" id="comment" style="height: 50%; position: relative; top: 20px;;"></textarea>
+                                        <textarea id="address" class="form-control outputDisplay" readonly rows="3" id="comment" placeholder="ที่อยู่ผู้ป่วย" style="height: 50%; position: relative; top: 20px;;"></textarea>
                                     </div>
                                 </form>
                             </div>
@@ -196,23 +202,23 @@
                                     <div id="myCarousel" class="carousel slide " data-ride="carousel" >
                                         <div class="carousel-inner" role="listbox">
                                             <div class="item active">
-                                                <img id="imageNum0" src="image/camera_icon_1.png" class="img-responsive">
+                                                <img id="imageNum0" src="image/takePhoto.png" class="img-responsive">
                                             </div>
 
                                             <div class="item">
-                                                <img id="imageNum1" src="image/camera_icon_1.png" class="img-responsive">
+                                                <img id="imageNum1" src="image/takePhoto.png" class="img-responsive">
                                             </div>
 
                                             <div class="item">
-                                                <img id="imageNum2" src="image/camera_icon_1.png" class="img-responsive">
+                                                <img id="imageNum2" src="image/takePhoto.png" class="img-responsive">
                                             </div>
 
                                             <div class="item">
-                                                <img id="imageNum3" src="image/camera_icon_1.png" class="img-responsive">
+                                                <img id="imageNum3" src="image/takePhoto.png" class="img-responsive">
                                             </div>
 
                                             <div class="item">
-                                                <img id="imageNum4" src="image/camera_icon_1.png" class="img-responsive">
+                                                <img id="imageNum4" src="image/takePhoto.png" class="img-responsive">
                                             </div>
                                         </div><br>
                                         <!-- Indicators -->
@@ -233,7 +239,7 @@
             <!--< Step 2 Display>-->
 
             <!--< Step 3 Display>-->
-            <div class="tab-pane" role="tabpanel" id="step3">
+            <div class="tab-pane active" role="tabpanel" id="step3">
                 <div class="row"><h4 class="col-xs-6">ขั้นตอนที่ 3</h4></div><br><br>
                 <center>
                     <div class="row" style="width: 90%">
@@ -254,29 +260,37 @@
             <!--< Step 3 Display>-->
 
             <!--< Step Complete Display>-->
-            <div class="tab-pane" role="tabpanel" id="complete">
+            <div class="tab-pane " role="tabpanel" id="complete">
                     <div class="row" style="width: 90%">
                         <div class="col-xs-12">
                             <h5 style="text-align: left; position: relative">อัปโหลดข้อมูลผู้ป่วยเรียบร้อย</h5>
                             <div>
                                 <input style="margin: 3px"  type="text" id="patient" next-step="false" name="textFULLNAME" class="form-control outputDisplay" readonly ; >
                             </div>
-                            <h5 style="text-align: left; position: relative">พิกัดผู้ป่วย</h5>
+
+                            <h5 style="text-align: left; position: relative; margin-top: 15px">พิกัดผู้ป่วย</h5>
                             <div>
                                 <input style="margin: 4px" type="text" id="latFinish" class="form-control outputDisplay" readonly ; >
                             </div>
                             <div>
                                 <input style="margin: 4px" type="text" id="lngFinish" class="form-control outputDisplay" readonly ;>
                             </div>
+                            <div id="fnImage">
+                                <!--<h5 style="text-align: left; position: relative; margin-top: 15px">รูปภาพที่พักผู้ป่วย</h5>-->
+                                <!--<div>-->
+                                    <!--<img class="form-inline"  src="image/300-Swan-l.jpg" class="img-responsive" style="height: 50px; margin: 2px">-->
+                                    <!--<img class="form-inline"  src="image/300-Swan-l.jpg" class="img-responsive" style="height: 50px; margin: 2px">-->
+                                    <!--<img class="form-inline"  src="image/300-Swan-l.jpg" class="img-responsive" style="height: 50px; margin: 2px">-->
+                                    <!--<img class="form-inline"  src="image/300-Swan-l.jpg" class="img-responsive" style="height: 50px; margin: 2px">-->
+                                    <!--<img class="form-inline"  src="image/300-Swan-l.jpg" class="img-responsive" style="height: 50px; margin: 2px">-->
+                                    <!--<img class="form-inline"  src="image/300-Swan-l.jpg" class="img-responsive" style="height: 50px; margin: 2px">-->
+                                    <!--<img class="form-inline"  src="image/300-Swan-l.jpg" class="img-responsive" style="height: 50px; margin: 2px">-->
+                                <!--</div>-->
+                            </div>
                         </div>
                     </div>
-                <!--<center style="margin-top: 10%; ">-->
-                    <!--<a href="#step1" data-toggle="tab"  role="tab" class="btn btn-warning" id="" style="width: auto; height: 40px; ">เสร็จสิ้น</a>-->
-                <!--</center>-->
             </div>
             <!--< Step Complete Display>-->
-
-            <!--<div class="clearfix"></div>-->
         </div>
         <!--< tab wizard >-->
 
@@ -292,22 +306,23 @@
 </div>
 <!--<<< img loading >>>-->
 
+<!--<<< img loading >>>-->
+<div class="modal" id="loading2" data-backdrop="static" style="top: 50%; text-align: center;" >
+    <img id="" src="image/loading_spinner.gif" style="width: 60px; height: 60px ; border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px ; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+    <h5 style="color: white">กำลังดำเนินการ...</h5>
+</div>
+<!--<<< img loading >>>-->
+
 <!-- Menu img  -->
 <center>
-    <div class="modal fade" id="test" data-backdrop="static" style="top: 40%; " >
-        <div class="modal-dialog">
-            <div class="modal-content" style="width: 60%; height: auto;">
-                <div class="modal-header" style="padding: 8px;">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-            <div class="modal-body">
-                <div class="list-group">
+    <div class="modal fade" id="test" >
+        <div class="modal-dialog " style="width: 200px; position: fixed; top: 48%; left: 50%; transform: translate(-55%,-50%);">
+                <div class="list-group" style="font-size: 21px">
                     <a href="#" id="takePhoto" class="list-group-item">ถ่ายภาพ</a>
                     <a href="#" id="showPhoto" class="list-group-item">ดูรูปภาพ</a>
                     <a href="#" id="deletePhoto" class="list-group-item">ลบรูปภาพ</a>
                 </div>
-            </div>
-        </div>
             </div>
     </div>
 </center>
@@ -315,15 +330,10 @@
 
 <!-- Show img  -->
 <center>
-    <div class="modal fade" id="showIMG" data-backdrop="static" style="top: 5%; bottom: 5%;" >
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="padding: 8px;">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <img  id="smallImage" src="" style="width: 95%; height: 95%;" />
-                </div>
+    <div class="modal fade" id="showIMG"   >
+        <div class="modal-dialog" style="position: fixed; top: 48%; left: 50%; transform: translate(-55%,-50%);">
+            <div class="modal-content" style="width: 250px">
+                    <img  id="smallImage" src="" style="width: 100%;" class="img-responsive"/>
             </div>
         </div>
     </div>

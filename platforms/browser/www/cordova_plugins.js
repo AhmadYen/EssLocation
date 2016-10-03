@@ -330,6 +330,30 @@ module.exports = [
         "file": "plugins/cordova-plugin-x-toast/test/tests.js",
         "id": "cordova-plugin-x-toast.tests",
         "pluginId": "cordova-plugin-x-toast"
+    },
+    {
+        "file": "plugins/cordova-plugin-fastrde-checkgps/www/CheckGPS.js",
+        "id": "cordova-plugin-fastrde-checkgps.CheckGPS",
+        "pluginId": "cordova-plugin-fastrde-checkgps",
+        "clobbers": [
+            "CheckGPS"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+        "id": "cordova-plugin-dialogs.notification",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/www/browser/notification.js",
+        "id": "cordova-plugin-dialogs.notification_browser",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            "navigator.notification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -344,7 +368,11 @@ module.exports.metadata =
     "cordova-plugin-network-information": "1.2.1",
     "cordova-plugin-file-transfer": "1.5.1",
     "cordova-plugin-x-toast": "2.5.2",
-    "cordova-plugin-crosswalk-webview": "1.8.0"
+    "cordova-plugin-crosswalk-webview": "1.8.0",
+    "cordova-plugin-android-gpsdetect": "0.0.3",
+    "cordova-plugin-fastrde-checkgps": "0.9.9",
+    "cordova.plugins.diagnostic": "3.2.1",
+    "cordova-plugin-dialogs": "1.3.0"
 }
 // BOTTOM OF METADATA
 });
