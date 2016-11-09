@@ -19,14 +19,14 @@ function upload(imageUrl,loop) {
         loop = loop + 1;
 
         //var serverUrl = 'http://ahmad.16mb.com/uploadImg.php';
-        var serverUrl = RootPathPHP + UploadImg;
+        var serverUrl = RootPathPHP + "uploadImg.php";
         var options = new FileUploadOptions();
         options.fileKey = "file";
         options.fileName = name + ".jpg";
         options.mimeType = "image/jpeg";
         options.chunkedMode = false;
         var params = {};
-        params.value1 = "/Imgupload/";
+        params.value1 = UploadImg;
         options.params = params;
 
         var ft = new FileTransfer();
