@@ -8,7 +8,7 @@ $( document).ready(function() {
 $('#searchHN').click(function (){
     networkInfo();
     $('#loading2').modal('show');
-    var url = RootPathPHP + CheckHn ;
+    var url = RootPathPHP + "PatientInformation.php";
     if($('#hn').val() != "" &&statusNet == true ){
 
         var hn = $('#hn').val() ;
@@ -21,14 +21,14 @@ $('#searchHN').click(function (){
             },
             data: { 'hnParam' : hn },
             //url: "http://ahmad.16mb.com/PatientInformation.php",
-            url : url,
+            url : url ,
             success: function (result) {
                // console.log(result);
 
                 if(result != ""){
                     $.each(result, function(i, field){
                         $('#name').val(field.pname + " " + field.fname + " " + field.lname);
-                        $('#address').val(field.addrpart +" "+ field.moopart +" "+ field.address + "" + field.po_code);
+                        $('#address').val('บ้านเลขที่ ' + field.addrpart +" หมู่ "+ field.moopart +" "+ field.address + "" + field.po_code);
                     });
                     $('#name').attr('next-step','true');
                     $('#loading2').modal('hide');
@@ -70,7 +70,7 @@ $('#searchHN').click(function (){
 //<<<---- CheckHN ---->>>
 
 //<<<---- Query Path ---->>>
-var RootPathPHP,CheckHn,HnInLocation,InsertLocation,UpdateLocation,DeleteImage,UploadImg,CheckLogin;
+var RootPathPHP,ServerPath,UploadImg;
 function queryPathPHP(){
 
     $.ajax({
@@ -82,36 +82,22 @@ function queryPathPHP(){
         },
 
         //----------**ต้องแก้ไขกรณีย้ายไฟล์**-----------//
-        url: "http://ahmad.16mb.com/queryPath.php",
+        //url: "http://ahmad.16mb.com/queryPath.php",
+        url: "http://203.158.252.36/PHP/queryPath.php",
         //----------**ต้องแก้ไขกรณีย้ายไฟล์**-----------//
 
 
         success: function (result) {
             if(result != ""){
                 $.each(result, function(i, field){
-                    if(field.name == 'RootPathPHP'){
-                        RootPathPHP = field.value ;
+                    if(field.name == 'PathPHP'){
+                        RootPathPHP = ServerPath + field.value ;
                     }
-                    else if(field.name == 'CheckHn'){
-                        CheckHn = field.value ;
+                    else if(field.name == 'PathServer'){
+                        ServerPath = field.value ;
                     }
-                    else if(field.name == 'HnInLocation'){
-                        HnInLocation = field.value ;
-                    }
-                    else if(field.name == 'InsertLocation'){
-                        InsertLocation = field.value ;
-                    }
-                    else if(field.name == 'UpdateLocation'){
-                        UpdateLocation = field.value ;
-                    }
-                    else if(field.name == 'DeleteImage'){
-                        DeleteImage = field.value ;
-                    }
-                    else if(field.name == 'UploadImg'){
+                    else if(field.name == 'PathImage'){
                         UploadImg = field.value ;
-                    }
-                    else if(field.name == 'CheckLogin'){
-                        CheckLogin = field.value ;
                     }
 
                 });
@@ -135,7 +121,7 @@ function queryPathPHP(){
 function update_location (num){
     var hn = $('#hn').val() ;
     var numImage = num ;
-    var url = RootPathPHP + UpdateLocation ;
+    var url = RootPathPHP + "updateDatalocation.php";
     var user = username ;
     $.ajax({
         type: "GET",
@@ -177,7 +163,7 @@ function update_location (num){
 //<<<---- Delete on Server ---->>>
 function delete_img (){
     var hn = $('#hn').val() ;
-    var url = RootPathPHP + DeleteImage ;
+    var url = RootPathPHP + "deleteImage.php";
     $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
@@ -188,7 +174,7 @@ function delete_img (){
         data: {'hnParam': hn
         },
         //url: "http://ahmad.16mb.com/deleteImage.php",
-        url : url,
+        url : url ,
         complete : function(xhr){
             console.log( xhr.status);
         }
@@ -199,7 +185,8 @@ function delete_img (){
 //<<<---- Check hn Before upload ---->>>
 
 function checkLogin(){
-    var url = RootPathPHP + CheckLogin ;
+    var url = RootPathPHP+ "checkLogin.php";
+        console.log(url);
     $('#loading2').modal('show');
     $.ajax({
         type: "GET",
@@ -211,7 +198,9 @@ function checkLogin(){
         data: { 'username' : $('#user').val(),
                 'password' : $('#password').val()},
         //url: "http://ahmad.16mb.com/checkLogin.php",
-        url : url,
+
+        url : url ,
+
         success: function (result) {
             //console.log(result);
             if(result != ""){
