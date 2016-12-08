@@ -1,7 +1,7 @@
 var username = '' ;
 var assignby = '' ;
+var endDate ;
 $( document).ready(function() {
-
 });
 
 //<<<---- CheckHN ---->>>
@@ -20,7 +20,7 @@ $('#searchHN').click(function (){
                 Accept: "application/json"
             },
             data: { 'hnParam' : hn },
-            //url: "http://ahmad.16mb.com/PatientInformation.php",
+            
             url : url ,
             success: function (result) {
                // console.log(result);
@@ -47,6 +47,7 @@ $('#searchHN').click(function (){
             },
             error: function(e){
             //console.log(e);
+            $('#loading2').modal('hide');
             window.plugins.toast.showLongBottom('เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง');
             },
             async: false
@@ -82,8 +83,7 @@ function queryPathPHP(){
         },
 
         //----------**ต้องแก้ไขกรณีย้ายไฟล์**-----------//
-        //url: "http://ahmad.16mb.com/queryPath.php",
-        url: "http://203.158.252.36/PHP/queryPath.php",
+        url: "http://203.158.110.142/PHP/queryPath.php",
         //----------**ต้องแก้ไขกรณีย้ายไฟล์**-----------//
 
 
@@ -137,13 +137,31 @@ function update_location (num){
             'user': user,
             'assignby' : assignby
         },
-        //url: "http://ahmad.16mb.com/updateDatalocation.php",
         url : url,
         success : function(result){
-            console.log(result);
+            // console.log(result);
             if(result){
-                delete_img();
-                upload(imageUrl,loop);
+                // delete_img();
+                // upload(imageUrl,loop);
+                $('#loading').modal('hide');
+                window.plugins.toast.showLongBottom('อัปโหลดสำเร็จ');
+                $('#patient').val( $('#name').val());
+                $('#latFinish').val($('#txtLat').val());
+                $('#lngFinish').val($('#txtLng').val());
+                var $active = $('.wizard .nav-tabs li.active');
+                $active.next().removeClass('disabled');
+                nextTab($active);
+                $('#prev').hide();
+                $('#next').hide();
+                addClassDisable();
+                $('#nexts').remove();
+                $('#prevs').remove();
+                $('#prev').hide();
+                $('#next').hide();
+                addClassDisable();
+                $('#stepFooter').append('<div class="col-xs-12" style="top: 4px; text-align: center;">'+
+                    '<p id="finish" onclick="finish()" style="font-size: 25px; color: #999999;">เสร็จสิ้น</p></div>');
+                showImgComplete();
             }
             else {
                 $('#loading').modal('hide');
@@ -173,7 +191,6 @@ function delete_img (){
         },
         data: {'hnParam': hn
         },
-        //url: "http://ahmad.16mb.com/deleteImage.php",
         url : url ,
         complete : function(xhr){
             console.log( xhr.status);
@@ -197,7 +214,6 @@ function checkLogin(){
         },
         data: { 'username' : $('#user').val(),
                 'password' : $('#password').val()},
-        //url: "http://ahmad.16mb.com/checkLogin.php",
 
         url : url ,
 
@@ -208,13 +224,14 @@ function checkLogin(){
                     if($('#user').val() == field.username && $('#password').val() == field.password && field.assignby != null) {
                         username = '?username='+field.username;
                         assignby = '&assignby='+field.assignby;
-                        window.location = '../www/rootPage.html'+username+assignby;
+                        endDate =  '&date='+field.date;
+                        window.location = '../www/rootPage.html'+username+assignby+endDate;
                     }
-                    else if($('#user').val() != field.username || $('#password').val() != field.password ){
-                        window.plugins.toast.showLongBottom('ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้องกรุณาตรวจสอบอีกครั้ง');
+                    else if($('#user').val() != field.username || $('#password').val() != field.password && field.assignby != '' || field.assignby != null){
+                        window.plugins.toast.showLongBottom('ชื่อผู้ใช้งานหรือรหัสผ่านอาจไม่ถูกต้องกรุณาตรวจสอบอีกครั้ง');
                     }
                     else if($('#user').val() == field.username && $('#password').val() == field.password && field.assignby == '' || field.assignby == null) {
-                        window.plugins.toast.showLongBottom('ไม่สามารถเข้าสู่ระบบได้กรุณาติดต่อเจ้าหน้าที่');
+                        window.plugins.toast.showLongBottom('ยังไม่ได้รับการมอบหมายงานกรุณาติดต่อเจ้าหน้าที่');
                     }
                 });
             }
@@ -225,6 +242,46 @@ function checkLogin(){
         },
         error: function (request,error) {
             //console.log(error);
+            $('#loading2').modal('hide');
+            window.plugins.toast.showLongBottom('เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง');
+        },
+        async: false
+    });
+}
+
+
+function assignment(username){
+     // networkInfo();
+ var url = "http://203.158.110.142/PHP/"+ "assignment.php";
+    $.ajax({
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        headers: {
+            Accept: "application/json"
+        },
+        data: { 'username' : username},
+               
+        url: url,
+        
+        success: function (result) {
+            if(result != ""){
+              
+        $.each(result, function(key, value) {   
+        $('#hn')
+         .append($("<option></option>")
+                    
+                    .text(value.hn)); 
+        });
+            }
+            else {
+
+               queryPathPHP();
+            }
+        },
+        error: function (e) {
+            console.log(e);
+            $('#loading2').modal('hide');
             window.plugins.toast.showLongBottom('เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง');
         },
         async: false

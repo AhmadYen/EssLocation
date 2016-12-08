@@ -100,6 +100,15 @@
         body {
             font-family: "customfont";
         }
+        select {
+  text-align: center;
+  text-align-last: center;
+  /* webkit*/
+}
+option {
+  text-align: left;
+  /* reset to left*/
+}
     </style>
     <!--/*<<< style RootPage >>>*/-->
 </head>
@@ -111,6 +120,7 @@
             <span class="glyphicon glyphicon-list dropdown-toggle" data-toggle="dropdown" style="color: #999999 ; font-size: 31px; top: 7px; left: 5px; " ></span>
             <ul class="dropdown-menu">
                 <li><a href="#" id='lbUser'></a></li>
+                <li><a href="#" id='dateUser'></a></li>
                 <li class="divider"></li>
                 <li ><a href="#" id="logout">ออกจากระบบ<span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
             </ul>
@@ -170,7 +180,12 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div style="width: 90%;" >
-                                <div><input id="hn" type="tel"  placeholder="กรอกรหัสผู้ป่วย" class="form-control inputHn" style="text-align: center"  name="txtHn" id="hn" onkeypress="CheckNum();" maxlength="7">
+                                <div>
+                                <select class="form-control inputHn" id="hn" style="text-align: center" ;>
+                                    <!-- <option>5555</option> -->
+                                    </select>
+
+                                    <!-- <input id="hn" type="tel"  placeholder="กรอกรหัสผู้ป่วย" class="form-control inputHn" style="text-align: center"  name="txtHn" id="hn" onkeypress="CheckNum();" maxlength="7"> -->
                                     <button id = "searchHN"   class="form-control btnSearch" type="button"><span class="glyphicon glyphicon-search" style="font-size: 20px"></span></button>
                                 </div>
                                 <br>
