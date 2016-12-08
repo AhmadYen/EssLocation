@@ -8,6 +8,9 @@ $(document).ready(function() {
     });
     //<< photo none slide auto >>
     getUrlVars();
+
+    assignment(username) ;
+
 });
 
 // Read a page's GET URL variables and return them as an associative array.
@@ -23,7 +26,9 @@ function getUrlVars()
     }
     username = vars.username ;
     assignby = vars.assignby ;
+    date = vars.date ;
     $('#lbUser').html(username+'<span class="glyphicon glyphicon-user pull-right"></span>');
+    // $('#dateUser').html(date+'<span class="glyphicon glyphicon-user pull-right"></span>');
 }
 // Read a page's GET URL variables and return them as an associative array.
 
@@ -68,9 +73,9 @@ $(document).click(function(){
 //<<< Remove Class Mobile>>>
 
 //<< Clear text >>
-$(function(){
-    $("#hn").addClear();
-});
+// $(function(){
+//     $("#hn").addClear();
+// });
 
 //$('#clearHn').click(function(){
 //
@@ -90,5 +95,8 @@ function CheckNum() {
 };
 //<<< Key press Number Hn>>>
 
-
+$('#hn').click(function(){
+    $("#name").val('');
+    $("#address").val('');
+});
 
